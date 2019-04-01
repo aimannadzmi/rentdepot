@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import Login from "./components/loginpage/Login";
+import Login from "./components/loginpage/login";
+import Header from './components/header/header';
 
 /**
  * The main App component that holds our whole React app
@@ -10,6 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
+        <Header/>
         </div>
         <p className="App-intro">
           <Login/>
