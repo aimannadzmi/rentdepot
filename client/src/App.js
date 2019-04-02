@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import Login from "./components/loginpage/Login";
+import Login from "./components/loginpage/Login.js";
+import AccountSignUp from "./components/accountsignup/Account.js";
+import $ from 'jquery'; 
 
 /**
  * The main App component that holds our whole React app
@@ -12,7 +13,8 @@ class App extends Component {
         <div className="App-header">
         </div>
         <p className="App-intro">
-          <Login/>
+          {/* <Login /> */}
+          <AccountSignUp/>
         </p>
       </div>
     );
