@@ -1,6 +1,6 @@
 import React from "react";
 
-const MyProfile = () => {
+const Profile = () => {
     return (
         <div className="container">
             <div className="col-lg-6">
@@ -11,4 +11,4 @@ const MyProfile = () => {
     );
 }
 
-export default MyProfile;
+export default Profile;

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Logo from "../images/logo.png";
 import HomePage from "../HomePage/HomePage.js";
 import Messaging from "../Messaging/Messaging.js";
-import MyProfile from "../MyProfile/MyProfile.js";
+import Profile from "../Profile/Profile.js";
 import Contact from "../Contact/Contact.js";
 
 function Navbar() {
@@ -27,8 +27,8 @@ function Navbar() {
       </li>
       <li className="nav-item">
         <Link
-          to={"/myProfile"}
-          className={window.location.pathname === "/myProfile" ? "nav-link active" : "nav-link"}
+          to={"/Profile"}
+          className={window.location.pathname === "/Profile" ? "nav-link active" : "nav-link"}
         >
           My Profile
         </Link>
@@ -46,7 +46,7 @@ function Navbar() {
     <Switch>
       <Route exact path ="/" component = {HomePage} />
       <Route path="/Messaging" component={Messaging} />
-      <Route path ="/MyProfile" component={MyProfile} />
+      <Route path ="/Profile" component={Profile} />
       <Route path ="/Contact" component={Contact} />
     </Switch>
     </Router>
