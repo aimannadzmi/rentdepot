@@ -1,7 +1,7 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Logo from "../images/logo.png";
-import HomePage from "../HomePage/HomePage.js";
+import HomePage from "../homepage/HomePage.js";
 import Messaging from "../Messaging/Messaging.js";
 import Profile from "../Profile/Profile.js";
 import Contact from "../Contact/Contact.js";
@@ -9,46 +9,62 @@ import Contact from "../Contact/Contact.js";
 function Navbar() {
   return (
     <Router>
-      <nav>
-    <img className="rentDepotLogo" src={Logo}/>
-    <ul className="nav nav-tabs">
-      <li className="nav-item">
-        <Link to={"/"} className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
-          Home
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {/* <img className="rentDepotLogo" src={Logo} /> */}
+        <ul className="nav nav-tabs">
+          <li className="nav-item">
+            <Link to={"/"} className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
+              Home
         </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to={"/Messaging"}
-          className={window.location.pathname === "/Messaging" ? "nav-link active" : "nav-link"}
-        >
-          Messaging
+          </li>
+          <li className="nav-item">
+            <Link
+              to={"/Messaging"}
+              className={window.location.pathname === "/Messaging" ? "nav-link active" : "nav-link"}
+            >
+              Messaging
         </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to={"/Profile"}
-          className={window.location.pathname === "/Profile" ? "nav-link active" : "nav-link"}
-        >
-          My Profile
+          </li>
+          <li className="nav-item">
+            <Link
+              to={"/Profile"}
+              className={window.location.pathname === "/Profile" ? "nav-link active" : "nav-link"}
+            >
+              My Profile
         </Link>
-      </li>
-      <li className="nav-item">
-        <Link
-          to={"/Contact"}
-          className={window.location.pathname === "/Contact" ? "nav-link active" : "nav-link"}
-        >
-          Contact Us
+          </li>
+          <li className="nav-item">
+            <Link
+              to={"/Contact"}
+              className={window.location.pathname === "/Contact" ? "nav-link active" : "nav-link"}
+            >
+              Contact Us
         </Link>
-      </li>
-    </ul>
-    </nav>
-    <Switch>
-      <Route exact path ="/" component = {HomePage} />
-      <Route path="/Messaging" component={Messaging} />
-      <Route path ="/Profile" component={Profile} />
-      <Route path ="/Contact" component={Contact} />
-    </Switch>
+          </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        </div>
+      </nav>
+      {/* <div className="col-lg-6">
+          <div classNAme="nav-item">
+            <div className="col-lg-12" id="searchBar">
+              <input type="text" placeholder="Search" style={{ width: "400px", marginTop: "20px" }} />
+              <button className="col-lg-3" id="searchBtn">Search</button>
+            </div>
+          </div>
+        </div> */}
+
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/Messaging" component={Messaging} />
+        <Route path="/Profile" component={Profile} />
+        <Route path="/Contact" component={Contact} />
+      </Switch>
     </Router>
   );
 }
@@ -61,11 +77,11 @@ export default Navbar;
 // function Home() {
 //     return <h2>Home</h2>;
 //   }
-  
+
 //   function Messages() {
 //     return <h2>Messages</h2>;
 //   }
-  
+
 //   function myProfile() {
 //     return <h2>My Profile</h2>;
 //   }
@@ -101,7 +117,7 @@ export default Navbar;
 //                 </li>
 //               </ul>
 //             </nav>
-    
+
 //             <Route path="/" exact component={Index} />
 //             <Route path="/about/" component={About} />
 //             <Route path="/users/" component={Users} />
@@ -109,5 +125,5 @@ export default Navbar;
 //         </Router>
 //       );
 //     }
-    
+
 //     export default AppRouter;

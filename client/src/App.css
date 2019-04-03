@@ -23,15 +23,12 @@
   to { transform: rotate(360deg); }
 }
 
-#signedIn{
-  float: left;
-}
-
 #signOut {
   float: right;
 }
 
 .rentDepotLogo {
-  width: 300px;
+  width: 200px;
   height: auto;
+  float: left;
 }
