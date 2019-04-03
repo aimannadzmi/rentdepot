@@ -1,0 +1,12 @@
+#showItems {
+    margin-top: 60px;
+    border: solid;
+    width: 1000px;
+    height: 1000px;
+    text-align: right;
+    
+}
+
+#searchBar {
+    margin-bottom: 20px;
+}
