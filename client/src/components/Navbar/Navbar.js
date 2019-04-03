@@ -1,20 +1,25 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import React, {Component} from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Logo from "../images/logo.png";
+import HomePage from "../HomePage/HomePage.js";
+import Messaging from "../Messaging/Messaging.js";
+import MyProfile from "../MyProfile/MyProfile.js";
+import Contact from "../Contact/Contact.js";
+
 function Navbar() {
   return (
     <Router>
-    <img className="rentDepotLogo" src={Logo}></img>
+      <nav>
+    <img className="rentDepotLogo" src={Logo}/>
     <ul className="nav nav-tabs">
       <li className="nav-item">
-        <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
+        <Link to={"/"} className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
           Home
         </Link>
       </li>
       <li className="nav-item">
         <Link
-          to="/Messaging"
+          to={"/Messaging"}
           className={window.location.pathname === "/Messaging" ? "nav-link active" : "nav-link"}
         >
           Messaging
@@ -22,7 +27,7 @@ function Navbar() {
       </li>
       <li className="nav-item">
         <Link
-          to="/myProfile"
+          to={"/myProfile"}
           className={window.location.pathname === "/myProfile" ? "nav-link active" : "nav-link"}
         >
           My Profile
@@ -30,13 +35,20 @@ function Navbar() {
       </li>
       <li className="nav-item">
         <Link
-          to="/Contact"
+          to={"/Contact"}
           className={window.location.pathname === "/Contact" ? "nav-link active" : "nav-link"}
         >
           Contact Us
         </Link>
       </li>
     </ul>
+    </nav>
+    <Switch>
+      <Route exact path ="/" component = {HomePage} />
+      <Route path="/Messaging" component={Messaging} />
+      <Route path ="/MyProfile" component={MyProfile} />
+      <Route path ="/Contact" component={Contact} />
+    </Switch>
     </Router>
   );
 }

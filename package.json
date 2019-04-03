@@ -29,5 +29,13 @@
     "mysql2": "^1.6.5",
     "react-firebaseui": "file:node_modules/react-firebaseui",
     "sequelize": "^5.2.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aimannadzmi/rentdepot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aimannadzmi/rentdepot/issues"
+  },
+  "homepage": "https://github.com/aimannadzmi/rentdepot#readme"
 }
