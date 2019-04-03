@@ -1,14 +1,15 @@
 import React from "react";
 // import "../accountsignup/js/main.js";
 // import "../accountsignup/js/map-custom.js";
-import "../accountsignup/css/util.css";
-import "../accountsignup/css/main.css";
-import "../accountsignup/vendor/animate/animate.css";
-import "../accountsignup/vendor/animsition/css/animsition.css";
-import "../accountsignup/vendor/animsition/css/animsition.min.css";
-import "../accountsignup/vendor/bootstrap/css/bootstrap-grid.css";
+// import "../AccountSignUp/Css/";
+// import "../AccountSignUp/Js"
+// import "../accountsignup/css/util.css";
+// import "../accountsignup/css/main.css";
+// import "../accountsignup/vendor/animate/animate.css";
+// import "../accountsignup/vendor/animsition/css/animsition.css";
+// import "../accountsignup/vendor/animsition/css/animsition.min.css";
+// import "../accountsignup/vendor/bootstrap/css/bootstrap-grid.css";
 // import "../accountsignup/vendor/"
-
 // import "../accountsignup/vendor/bootstrap/css";
 // import "../accountsignup/vendor/bootstrap/css";
 // import "../accountsignup/vendor/bootstrap/css";

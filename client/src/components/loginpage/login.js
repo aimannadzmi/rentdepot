@@ -1,6 +1,7 @@
 import React from "react";
-import '../loginpage/css/main.css';
-import '../loginpage/css/util.css';
+import '../LoginPage/css/main.css';
+import '../LoginPage/css/util.css';
+// import jQuery from "../components/loginpage/vendor/jquery/jquery-3.2.1.min.js";
 // import { url } from "inspector";
 
 // const sectionStyle = {
@@ -64,7 +65,7 @@ const Login = () => (
 
 					<div className="flex-col-c p-t-155">
 						<span className="txt1 p-b-17">
-							Or Sign Up Using
+							Dont Have An Account?
 						</span>
 
 						<a href="#" className="txt2">
@@ -77,7 +78,7 @@ const Login = () => (
 	</div>
 	
 
-	// <div id="dropDownSelect1"></div>
+	// <div className="drop" id="dropDownSelect1"></div>
 )
 
 export default Login;
