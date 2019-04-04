@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Logo from "../images/logo.png";
-import HomePage from "../homepage/HomePage.js";
+import HomePage from "../HomePage/HomePage.js";
 import Messaging from "../Messaging/Messaging.js";
 import Profile from "../Profile/Profile.js";
 import Contact from "../Contact/Contact.js";
 
 function Navbar() {
+
+  console.log(window.location.pathname);
   return (
     <Router>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -14,14 +16,14 @@ function Navbar() {
         {/* <img className="rentDepotLogo" src={Logo} /> */}
         <ul className="nav nav-tabs">
           <li className="nav-item">
-            <Link to={"/"} className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
+            <Link to={"/"} className={"nav-link"}>
               Home
         </Link>
           </li>
           <li className="nav-item">
             <Link
               to={"/Messaging"}
-              className={window.location.pathname === "/Messaging" ? "nav-link active" : "nav-link"}
+              className={"nav-link"}
             >
               Messaging
         </Link>
@@ -29,7 +31,7 @@ function Navbar() {
           <li className="nav-item">
             <Link
               to={"/Profile"}
-              className={window.location.pathname === "/Profile" ? "nav-link active" : "nav-link"}
+              className= {"nav-link"}
             >
               My Profile
         </Link>
@@ -37,7 +39,7 @@ function Navbar() {
           <li className="nav-item">
             <Link
               to={"/Contact"}
-              className={window.location.pathname === "/Contact" ? "nav-link active" : "nav-link"}
+              className={"nav-link"}
             >
               Contact Us
         </Link>
