@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import "./App.css"
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
-import HomePage from "./components/HomePage/HomePage"
+import HomePage from "./components/homepage/HomePage"
 import Navbar from "./components/Navbar/Navbar.js";
 import Post from "./components/PostingPage/Post.js"
 import Search from "./components/Search/Search.js"
@@ -45,7 +45,6 @@ class App extends Component {
             <button id="signOut" onClick={() => firebase.auth().signOut()}>Sign out!</button>
             <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
             <Navbar />
-            {/* <HomePage/> */}
             
           </span>
         ) : (
