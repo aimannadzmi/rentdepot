@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Logo from "../images/logo.png";
-import HomePage from "../HomePage/HomePage.js";
-import Messaging from "../Messaging/Messaging.js";
+import HomePage from "../homepage/HomePage.js";
+import Inbox from "../Inbox/Inbox.js";
 import Profile from "../Profile/Profile.js";
 import Contact from "../Contact/Contact.js";
 
@@ -22,10 +22,10 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
-              to={"/Messaging"}
+              to={"/Inbox"}
               className={"nav-link"}
             >
-              Messaging
+              Inbox
         </Link>
           </li>
           <li className="nav-item">
@@ -63,7 +63,7 @@ function Navbar() {
 
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/Messaging" component={Messaging} />
+        <Route path="/Inbox" component={Inbox} />
         <Route path="/Profile" component={Profile} />
         <Route path="/Contact" component={Contact} />
       </Switch>
