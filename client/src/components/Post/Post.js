@@ -6,7 +6,7 @@ const Post = () => {
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">
-                    <span id="rentText">Rent Out Your Item</span>
+                    <h2>Rent Out Your Item</h2>
                     <div className="formFillOut">
                         <form>
                             <div class="form-group">
@@ -23,7 +23,7 @@ const Post = () => {
                             </div>
                             <form>
                                 <div class="form-group">
-                                    <label for="exampleFormControlFile1">Upload Item Image</label>
+                                    <h4>Upload Item Image</h4>
                                     <input type="file" class="form-control-file" id="exampleFormControlFile1" />
                                 </div>
                             </form>
