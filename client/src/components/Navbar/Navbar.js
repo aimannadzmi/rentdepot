@@ -5,12 +5,15 @@ import HomePage from "../homepage/HomePage.js";
 import Inbox from "../Inbox/Inbox.js";
 import Profile from "../Profile/Profile.js";
 import Contact from "../Contact/Contact.js";
+import Post from "../Post/Post.js";
 
 function Navbar() {
 
   console.log(window.location.pathname);
   return (
     <Router>
+      <div className="container">
+      <div className="col-lg-12">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         {/* <img className="rentDepotLogo" src={Logo} /> */}
@@ -38,6 +41,14 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
+              to={"/Post"}
+              className= {"nav-link"}
+            >
+              Post an Item
+        </Link>
+          </li>
+          <li className="nav-item">
+            <Link
               to={"/Contact"}
               className={"nav-link"}
             >
@@ -46,12 +57,14 @@ function Navbar() {
           </li>
 
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form className="form-inline my-2 my-lg-0 floatright">
+          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         </div>
       </nav>
+    </div>
+    </div>
       {/* <div className="col-lg-6">
           <div classNAme="nav-item">
             <div className="col-lg-12" id="searchBar">
@@ -65,6 +78,7 @@ function Navbar() {
         <Route exact path="/" component={HomePage} />
         <Route path="/Inbox" component={Inbox} />
         <Route path="/Profile" component={Profile} />
+        <Route path="/Post" component={Post} />
         <Route path="/Contact" component={Contact} />
       </Switch>
     </Router>
@@ -72,60 +86,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-// import React from "react";
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
-// function Home() {
-//     return <h2>Home</h2>;
-//   }
-
-//   function Messages() {
-//     return <h2>Messages</h2>;
-//   }
-
-//   function myProfile() {
-//     return <h2>My Profile</h2>;
-//   }
-
-// const Navbar = () => (
-//     <div className="container">
-//         <div className="col-lg-6" id="rentDepotLogo">
-//             <img className="logo" src=""/>
-//         </div>
-
-//         <div className="col-lg-6" id="navBar">
-//             <a style={{marginRight: "20px"}} Link to="/">Home</a>
-//             <a style={{marginRight: "20px"}} href="">Messages</a>
-//             <a href="">My Profile</a>
-//         </div>
-//     </div>
-// )
-
-// function AppRouter() {
-//     return (
-//         <Router>
-//           <div>
-//             <nav>
-//               <ul>
-//                 <li>
-//                   <Link to="/">Home</Link>
-//                 </li>
-//                 <li>
-//                   <Link to="/messages/">Messages</Link>
-//                 </li>
-//                 <li>
-//                   <Link to="/myProfile/">My Profile</Link>
-//                 </li>
-//               </ul>
-//             </nav>
-
-//             <Route path="/" exact component={Index} />
-//             <Route path="/about/" component={About} />
-//             <Route path="/users/" component={Users} />
-//           </div>
-//         </Router>
-//       );
-//     }
-
-//     export default AppRouter;
