@@ -1,20 +1,31 @@
-import React from "react";
+import React, { Component } from "react";
+import "./Profile.css"
+import firebase from "firebase"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Post from "../Post/Post"
 
 const Profile = () => {
     return (
-        <div className="container">
-            <div className="col-lg-12">
-                <img src=""/>
-                <div className="container">
-                <h2>My Profile</h2>
+        <Router>
+        <div className="container profile">
+            <div className="row">
+                <div className="col-lg-3" id="userProfile">
+                    <img id="userImage" src="" />
+                    <h4 id="profileUserName">{firebase.auth().currentUser.displayName}</h4>
                 </div>
-                <div className="container">
-                <h3>My Recent Items</h3>
+                <div className="col-lg-7" id="rentList">
+                    <div className="rentList">
+                    <h4>My Items</h4>
+                    <div className="rentedItems"></div>
+                    </div>
                 </div>
             </div>
-            <div className="" id="userName"></div>
         </div>
+
+<Switch>
+<Route path="/Post" component={Post} />
+</Switch>
+</Router>
     );
 }
 
