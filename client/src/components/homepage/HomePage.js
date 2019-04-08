@@ -12,7 +12,7 @@ const HomePage = () => {
                     </form>
                 </div>
             </div>
-            <div className="row">
+            <div className="row"  id ="showRandomItems">
                 <div className="col-lg-12" id="showItems">
                     <div className="container"><br></br>
                         <div className="col-lg-4" id="rentImage">

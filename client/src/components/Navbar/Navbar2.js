@@ -16,8 +16,8 @@ export default class Navbar2 extends Component {
                         <div className="col-lg-8">
                             <nav className="navbar">
                                 <ul><Link to={"/"}>Home</Link></ul> 
-                                <ul><Link to={"/Post"}>Post Item</Link></ul> 
-                                <ul><Link to={"/Inbox"}>Messages</Link></ul> 
+                                <ul><Link to={"/Post"}>Post an Item</Link></ul> 
+                                <ul><Link to={"/Inbox"}>Inbox</Link></ul> 
                                 <ul><Link to={"/Profile"}>My Profile</Link></ul>
                             </nav>
                         </div>

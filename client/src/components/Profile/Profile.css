@@ -10,7 +10,7 @@
     padding-top: 30px;
 }
 
-#userProfile, #rentList {
+#userProfile, #rentList, #favoritesList{
     margin-top: 2%;
     background: #fff;
     border-radius: 10px;
@@ -25,5 +25,11 @@
 }
 
 #rentList {
-    left: 10%;
+    left: 8%;
+}
+
+.deleteAccountButton {
+    position:relative;
+    top: 50px;
+    left:450px;
 }
