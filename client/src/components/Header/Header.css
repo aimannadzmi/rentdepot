@@ -1,0 +1,21 @@
+#header{
+    margin-top: 2%;
+}
+img {
+    float:left;
+    height: 100px;
+    width: 200px;
+}
+
+#welcomeUser {
+    margin-top: 4%;
+}
+#signOutBtn {
+    margin-top: 4%;
+}
+
+#signOut {
+    border-radius: 5px;
+    width: 100px;
+    box-shadow: 0 1px 3px #999, 0 1px 3px grey;
+}
