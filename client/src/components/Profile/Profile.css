@@ -1,6 +1,8 @@
 .profile {
     margin-top: 5%;
+
     margin-bottom: 5%;
+
 }
 
 #userImage{
@@ -10,6 +12,7 @@
 #profileUserName {
     padding-top: 30px;
 }
+
 
 #userProfile, #rentList {
     margin-top: 2%;
@@ -27,4 +30,5 @@
 
 #rentList {
     left: 10%;
+
 }

@@ -5,25 +5,24 @@ import Inbox from "../Inbox/Inbox.js";
 import Profile from "../Profile/Profile.js";
 import Contact from "../Contact/Contact.js";
 import Post from "../Post/Post.js";
-import "./Navbar.css"
+import "./Navbar2.css"
 
-export default class Navbar extends Component {
+export default class Navbar2 extends Component {
     render() {
         return (
             <Router>
-                <div className="container nav">
+                <div className="container">
                     <div className="row">
                         <div className="col-lg-8">
                             <nav className="navbar">
-                                <ul><Link to={"/"}><span>Home</span></Link></ul> 
-                                <ul><Link to={"/Post"}><span>Post Item</span></Link></ul> 
-                                <ul><Link to={"/Inbox"}><span>Messages</span></Link></ul> 
-                                <ul id="navMove"><Link to={"/Profile"}><span>My Profile</span></Link></ul>
+                                <ul><Link to={"/"}>Home</Link></ul> 
+                                <ul><Link to={"/Post"}>Post an Item</Link></ul> 
+                                <ul><Link to={"/Inbox"}>Inbox</Link></ul> 
+                                <ul><Link to={"/Profile"}>My Profile</Link></ul>
                             </nav>
                         </div>
                     </div>
                 </div>
-
 
                 <Switch>
                     <Route exact path="/" component={HomePage} />
@@ -35,5 +34,4 @@ export default class Navbar extends Component {
             </Router>
         );
     }
-
 }

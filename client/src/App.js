@@ -2,7 +2,17 @@ import React, { Component } from "react"
 import "./App.css"
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
+
 import Header from "./components/Header/Header.js"
+
+import HomePage from "./components/homepage/HomePage"
+import Navbar from "./components/Navbar/Navbar.js";
+import Post from "./components/Post/Post.js"
+import Search from "./components/Search/Search.js"
+import Logo from "./components/images/logo.png"
+import Header from "./components/Header/Header.js"
+
+
 
 firebase.initializeApp({
   apiKey: "AIzaSyAK2iUyH64f3JJWBpgEBSg_lSF_gqV5v-s",

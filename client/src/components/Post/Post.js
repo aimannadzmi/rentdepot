@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import "./Post.css"
 
 
+
 export default class Form extends Component {
     constructor(props) {
         super(props)
@@ -91,4 +92,3 @@ export default class Form extends Component {
         );
     }
 }
-
