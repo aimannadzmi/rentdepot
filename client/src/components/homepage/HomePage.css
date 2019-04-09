@@ -7,9 +7,12 @@
     
     box-shadow: 0 3px 6px  #999, 0 3px 6px #999;
     text-align: left;
-   
+    margin-top: 10px;
 }
 
+#homePageRow2 {
+    margin-top: 2%;
+}
 #searchForm {
     margin-top: 20px;
 }
@@ -17,11 +20,25 @@
 .searchField {
     width: 400px;
     border-style: solid;
-    border-radius: 10px;
     border-color: grey;
     right: 20%;
+    box-shadow: 0 1px 1px , 0 1px 1px ;
 }
 
 h2, h3, h4 {
     font-family: 'Courier New', Courier, monospace;
+}
+
+.searchSubmit {  
+    margin-left: 10px;
+}
+
+.searchSubmit:hover {
+    color: teal;
+}
+
+#searchicon {
+    
+    height: 25px;
+    width: 25px;
 }

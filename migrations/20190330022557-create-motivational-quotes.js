@@ -1,14 +1,20 @@
 'use strict';
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('MotivationalQuotes', {
+  up: (db, Sequelize) => {
+    return db.createTable('items', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      quote: {
+      itemName: {
+        type: Sequelize.STRING
+      },
+      itemPrice: {
+        type: Sequelize.STRING
+      },
+      itemDescription: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -21,7 +27,7 @@ module.exports = {
       }
     });
   },
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('MotivationalQuotes');
+  down: (db, Sequelize) => {
+    return db.dropTable('items');
   }
 };

@@ -1,10 +1,32 @@
-.floatright {
-    position: relative;
-    left: 100px;
+nav {
+    left: 50%;
+    border-color: white;
+    border-radius: 10px;
+    height: 50px;
+    border-style: solid;
+    width: 600px;
+    box-shadow: 0 2px 10px teal, 0 2px 2px teal;
+    margin-bottom: 20px;
+}
+.nav {
+    margin-top: 2%;
+}
+#navMove {
+    padding-right: 50px;
 }
 
-nav {
-    margin-top: 20px;
-    left: 1%;
-    background-color: white;
+ul {
+    /* font-family: 'Permanent Marker', cursive; */
+    /* font-family: 'Cinzel', serif; */
+    font-family: 'Patua One', cursive;
+    color: teal;
+}
+span {
+    color:teal;
+    text-decoration-line: none;
+}
+
+
+Link {
+    text-decoration: none;
 }
