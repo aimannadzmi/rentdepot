@@ -2,7 +2,6 @@ import React from "react";
 import "./Header.css";
 import Logo from "../../components/images/logo.png"
 import firebase from "firebase"
-
 import Navbar from "../Navbar/Navbar"
 
 
@@ -22,7 +21,7 @@ function Header() {
                 </div>
             </div>
             <div className="row">
-                <Navbar2/>
+                <Navbar/>
             </div>
         </div>
     );
