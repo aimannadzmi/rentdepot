@@ -13,9 +13,11 @@ const Profile = () => {
                     <img id="userImage" src="" />
                     <h4 id="profileUserName">{firebase.auth().currentUser.displayName}</h4>
                 </div>
-                <div className="col-lg-8" id="rentList">
+
+                <div className="col-lg-7" id="rentList">
                     <div className="rentList">
-                    <h4>My Items For Rent</h4>
+                    <h4>My Items</h4>
+
                     <div className="rentedItems"></div>
                     </div>
                 </div>

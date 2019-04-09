@@ -1,5 +1,5 @@
--- USE yqt8dyp1ummg5tci;
 
+USE itemsdb;
 INSERT INTO `items` (itemName, itemPrice, itemDescription, itemLocation, itemImage, createdAt, updatedAt) 
     VALUES ("Longboard Surfboard", "10", "Longboard for beginners!", "Laguna Beach", "Image", now(), now());
 

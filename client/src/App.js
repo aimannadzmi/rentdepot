@@ -2,6 +2,9 @@ import React, { Component } from "react"
 import "./App.css"
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
+
+import Header from "./components/Header/Header.js"
+
 import HomePage from "./components/homepage/HomePage"
 import Navbar from "./components/Navbar/Navbar.js";
 import Post from "./components/Post/Post.js"
@@ -17,7 +20,13 @@ firebase.initializeApp({
 })
 
 class App extends Component {
-  state = { isSignedIn: false }
+
+  state = { 
+    isSignedIn: false,
+    items : []
+  }
+
+
   uiConfig = {
     signInFlow: "popup",
     signInOptions: [
@@ -39,7 +48,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" >
+      {/* <style>{'body { background-color: #87F4ED; }'}</style> */}
         {this.state.isSignedIn ? (
           <span>
             <Header/>

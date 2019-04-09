@@ -2,7 +2,9 @@ import React from "react";
 import "./Header.css";
 import Logo from "../../components/images/logo.png"
 import firebase from "firebase"
-import Navbar2 from "../Navbar/Navbar2"
+
+import Navbar from "../Navbar/Navbar"
+
 
 
 function Header() {

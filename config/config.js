@@ -37,7 +37,7 @@ module.exports = {
   "test": {
     "username": "root",
     "password": "blahblah",
-    "database": "testdb",
+    "database": "itemsdb",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
