@@ -1,25 +1,44 @@
 #showItems {
-   
-    width: 100%;
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    padding-bottom: 10%;
-    padding-top: 10%;
-  
-    box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.1);
-    -o-box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.1);
-    -ms-box-shadow: 0 0px 10px 1px rgba(0, 0, 0, 0.1);
+    border-color: white;
+    border-radius: 2px;
+    height: 325px;
+    margin: 1rem;
+    position: relative;
     
-    border-color: grey;
+    box-shadow: 0 3px 6px  #999, 0 3px 6px #999;
+    text-align: left;
+    margin-top: 10px;
 }
 
-#searchBar {
-    margin-bottom: 20px;
+#homePageRow2 {
+    margin-top: 2%;
+}
+#searchForm {
+    margin-top: 20px;
+}
+
+.searchField {
+    width: 400px;
+    border-style: solid;
+    border-color: grey;
+    right: 20%;
+    box-shadow: 0 1px 1px , 0 1px 1px ;
 }
 
 h2, h3, h4 {
     font-family: 'Courier New', Courier, monospace;
+}
+
+.searchSubmit {  
+    margin-left: 10px;
+}
+
+.searchSubmit:hover {
+    color: teal;
+}
+
+#searchicon {
+    
+    height: 25px;
+    width: 25px;
 }

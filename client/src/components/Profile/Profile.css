@@ -1,0 +1,30 @@
+.profile {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#userImage{
+    padding-top: 20px;
+}
+
+#profileUserName {
+    padding-top: 30px;
+}
+
+#userProfile, #rentList {
+    margin-top: 2%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-shadow: 0 3px 6px #999, 0 3px 6px grey;
+    border-color: white;
+    border-style: solid;
+}
+
+#rentList {
+    left: 10%;
+}

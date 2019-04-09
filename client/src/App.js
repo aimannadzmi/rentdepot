@@ -2,13 +2,7 @@ import React, { Component } from "react"
 import "./App.css"
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
-import HomePage from "./components/homepage/HomePage"
-import Navbar from "./components/Navbar/Navbar.js";
-import Post from "./components/Post/Post.js"
-import Search from "./components/Search/Search.js"
-import Logo from "./components/images/logo.png"
-
-
+import Header from "./components/Header/Header.js"
 
 firebase.initializeApp({
   apiKey: "AIzaSyAK2iUyH64f3JJWBpgEBSg_lSF_gqV5v-s",
@@ -16,7 +10,13 @@ firebase.initializeApp({
 })
 
 class App extends Component {
-  state = { isSignedIn: false }
+
+  state = { 
+    isSignedIn: false,
+    items : []
+  }
+
+
   uiConfig = {
     signInFlow: "popup",
     signInOptions: [
@@ -38,14 +38,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" >
+      {/* <style>{'body { background-color: #87F4ED; }'}</style> */}
         {this.state.isSignedIn ? (
           <span>
-            <img className="rentDepotLogo" src={Logo} />
-            <button id="signOut" onClick={() => firebase.auth().signOut()}>Sign out!</button>
-            <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
-            <Navbar />
-            
+            <Header/>
           </span>
         ) : (
             <StyledFirebaseAuth

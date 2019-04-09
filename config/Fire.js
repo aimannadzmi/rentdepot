@@ -12,7 +12,7 @@ import firebase from "firebase";
   const fire = firebase.initializeApp(config);
 
   
-  var globalUsername;
+  let globalUsername;
     function handleSignUp() {
       var email = $('#email').val();
       var password = $('#password').val();
