@@ -45,12 +45,13 @@
 .center {
     position: relative;
     left: 35%;
+}
 
 #searchBar {
     margin-bottom: 20px;
 }
 
-#center {
+/* #center {
     position: relative;
     right: 10%;
-}
+} */

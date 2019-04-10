@@ -92,7 +92,7 @@ export default class Form extends Component {
                                         value={this.state.itemImage}  />
                                     </div>
                                 </div>
-                                <input type="submit" className="submitForm" value="Post Item"/>
+                                <input type="submit" className="submitForm" id ="buttoncolor" value="Post Item"/>
                             </form>
                         </div>
                     </div>
