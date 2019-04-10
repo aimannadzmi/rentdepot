@@ -55,10 +55,20 @@ export default class Form extends Component {
                                     <input type="text"
                                             className="form-control" 
                                             id="formGroupExampleInput2" 
-                                            placeholder="Price Per Hour"
+                                            placeholder="Price Per Day"
                                             name="itemPrice"
                                             onChange={this.handleInputChange}
                                             value={this.state.itemPrice}  />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="formGroupExampleInput4"></label>
+                                    <input type="text" 
+                                            className="form-control" 
+                                            id="formGroupExampleInput"
+                                            placeholder="ZIP Code"
+                                            name="00000-99999"
+                                            onChange={this.handleInputChange}
+                                            value={this.state.itemName} />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="formGroupExampleInput3"></label>
@@ -70,6 +80,7 @@ export default class Form extends Component {
                                      onChange={this.handleInputChange}
                                      value={this.state.itemDescription}  />
                                 </div>
+                                
                                 <div>
                                     <div className="form-group">
                                         <div id="uploaditemText">Upload Image</div>

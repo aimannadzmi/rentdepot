@@ -1,11 +1,12 @@
 import React from "react";
 import "./HomePage.css";
-import searchicon from "../../components/images/searchicon.png"
 import Search from "../Search/Search.js"
+
 
 const HomePage = () => {
     return (
         <div className="container">
+
         <div className="col-md-8">
             <Search/>
             </div>

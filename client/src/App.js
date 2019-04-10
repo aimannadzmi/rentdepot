@@ -2,15 +2,8 @@ import React, { Component } from "react"
 import "./App.css"
 import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
-
+import Footer from "./components/Footer/Footer.js"
 import Header from "./components/Header/Header.js"
-
-import HomePage from "./components/homepage/HomePage"
-import Navbar from "./components/Navbar/Navbar.js";
-import Post from "./components/Post/Post.js"
-import Search from "./components/Search/Search.js"
-import Logo from "./components/images/logo.png"
-
 
 
 firebase.initializeApp({
@@ -47,6 +40,7 @@ class App extends Component {
 
   render() {
     return (
+      <div>
       <div className="App" >
       {/* <style>{'body { background-color: #87F4ED; }'}</style> */}
         {this.state.isSignedIn ? (
@@ -59,6 +53,9 @@ class App extends Component {
               firebaseAuth={firebase.auth()}
             />
           )}
+          
+      </div>
+      <Footer/>
       </div>
     )
   }

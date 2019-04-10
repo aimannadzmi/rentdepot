@@ -7,3 +7,12 @@
 body {
     background: teal;
 }
+
+.center {
+
+    position:relative;
+    left: 17%;
+    top: 3%;
+    
+}
+

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-// const rentDepotRoutes = require("../../client");
+const rentDepotRoutes = require("./getpostforms");
 
 /**
  * API routes 
@@ -12,6 +12,6 @@ const router = require("express").Router();
  */
 
 // contains routes for `/api/motivation/`
-// router.use("/motivation", rentDepotRoutes);
+router.use("/getpostforms", rentDepotRoutes);
 
 module.exports = router;

@@ -41,7 +41,16 @@
     color: #f48fb1;
 } */
 
+
 .center {
     position: relative;
     left: 35%;
+
+#searchBar {
+    margin-bottom: 20px;
+}
+
+#center {
+    position: relative;
+    right: 10%;
 }
