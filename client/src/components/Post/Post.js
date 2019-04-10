@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import "./Post.css"
+import axios from "axios"
 
 
 export default class Form extends Component {
@@ -15,21 +16,30 @@ export default class Form extends Component {
     };
     
     handleInputChange = (e) => {
-        // e.preventDefault();
-        // console.log(e.target.name);
-        // console.log(e.target.value);
         this.setState({
             [e.target.name]: e.target.value
 
         })
     }
-
-  
-
     handleFormSubmit = (e) => {
         e.preventDefault();
         const data = this.state
         console.log(data);
+
+        axios.post("/api/getpostforms/add", { 
+            itemName: this.state.itemName,
+            itemPrice: this.state.itemPrice,
+            itemLocation: this.state.itemLocation,
+            itemDescription: this.state.itemDescription,
+            itemImage: this.state.itemImage
+          }).then(response => {
+            console.log("Item added", response);
+      
+            // Tell our parent component that we've updated the database
+            if (this.props.afterAddCallback) {
+              this.props.afterAddCallback();
+            }
+          })
 
     }
     render() {
@@ -66,9 +76,9 @@ export default class Form extends Component {
                                             className="form-control" 
                                             id="formGroupExampleInput"
                                             placeholder="ZIP Code"
-                                            name="00000-99999"
+                                            name="itemLocation"
                                             onChange={this.handleInputChange}
-                                            value={this.state.itemName} />
+                                            value={this.state.itemLocation} />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="formGroupExampleInput3"></label>
