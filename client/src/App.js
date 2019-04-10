@@ -5,13 +5,6 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import Footer from "./components/Footer/Footer.js"
 import Header from "./components/Header/Header.js"
 
-import HomePage from "./components/homepage/HomePage"
-import Navbar from "./components/Navbar/Navbar.js";
-import Post from "./components/Post/Post.js"
-import Search from "./components/Search/Search.js"
-import Logo from "./components/images/logo.png"
-
-
 
 firebase.initializeApp({
   apiKey: "AIzaSyAK2iUyH64f3JJWBpgEBSg_lSF_gqV5v-s",

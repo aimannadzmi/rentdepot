@@ -5,7 +5,7 @@ import "./Footer.css";
 const Footer = () => {
     return (
         
-            <h3 id="footerInfo">Rent Depot Inc. 2019</h3>
+            <h3 id="footerInfo">Rent Depot Inc. 2019 &copy; </h3>
         
     );
 }

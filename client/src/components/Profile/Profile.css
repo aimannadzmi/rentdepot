@@ -7,6 +7,8 @@
 
 #userImage{
     padding-top: 20px;
+    right: 25%;
+
 }
 
 #profileUserName {
@@ -14,7 +16,7 @@
 }
 
 
-#userProfile, #rentList {
+#userProfile, #rentList, #favoritesList {
     margin-top: 2%;
     background: #fff;
     border-radius: 10px;
@@ -31,4 +33,8 @@
 #rentList {
     left: 10%;
 
+}
+
+#favoritesList {
+    left: -3%
 }

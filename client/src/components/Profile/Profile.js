@@ -10,8 +10,12 @@ const Profile = () => {
         <div className="container profile">
             <div className="row">
                 <div className="col-lg-3" id="userProfile">
+                    <div className="col-lg-12">
                     <img id="userImage" src="" />
+                    </div>
+                    <div className="col-lg-12">
                     <h4 id="profileUserName">{firebase.auth().currentUser.displayName}</h4>
+                    </div>
                 </div>
 
                 <div className="col-lg-7" id="rentList">
@@ -26,10 +30,7 @@ const Profile = () => {
                     <h4>My Favorite Items</h4>
                     <div className="favorited"></div>
                     </div>
-                </div>  
-                <footer>
-                    <button className="deleteAccountButton">Delete Account</button>
-                </footer>           
+                </div>          
             </div>
         </div>
 
