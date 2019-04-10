@@ -9,24 +9,23 @@ export default class Form extends Component {
             itemName: '',
             itemPrice: '',
             itemDescription: '',
+            itemLocation: '',
             itemImage: ''
         }
     };
     
     handleInputChange = (e) => {
-        e.preventDefault();
-        console.log(e.target.name);
-        console.log(e.target.value);
-        let name = e.target.name;
-        let value = e.target.value;
+        // e.preventDefault();
+        // console.log(e.target.name);
+        // console.log(e.target.value);
         this.setState({
-            [e.target.name]: e.target.value,
+            [e.target.name]: e.target.value
+
         })
     }
 
-    componentDidMount() {
-        
-    }
+  
+
     handleFormSubmit = (e) => {
         e.preventDefault();
         const data = this.state
@@ -71,7 +70,7 @@ export default class Form extends Component {
                                      onChange={this.handleInputChange}
                                      value={this.state.itemDescription}  />
                                 </div>
-                                <form>
+                                <div>
                                     <div className="form-group">
                                         <div id="uploaditemText">Upload Image</div>
                                         <input type="file" 
@@ -81,8 +80,8 @@ export default class Form extends Component {
                                         onChange={this.handleInputChange}
                                         value={this.state.itemImage}  />
                                     </div>
-                                </form>
-                                <button className="submitForm">Post Item</button>
+                                </div>
+                                <input type="submit" className="submitForm" value="Post Item"/>
                             </form>
                         </div>
                     </div>
