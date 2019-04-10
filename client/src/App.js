@@ -4,6 +4,8 @@ import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import Footer from "./components/Footer/Footer.js"
 import Header from "./components/Header/Header.js"
+import axios from "axios"
+// import Navbar from "./components/Navbar/Navbar"
 
 
 firebase.initializeApp({
@@ -16,7 +18,7 @@ class App extends Component {
   state = { 
     isSignedIn: false,
     items : []
-  }
+  };
 
 
   uiConfig = {
@@ -36,13 +38,26 @@ class App extends Component {
       this.setState({ isSignedIn: !!user })
       console.log("user", user)
     })
-  }
+
+    this.updateItems();
+    }
+    
+    updateItems = () => {
+      axios.get("/api/getpostforms").then(response => {
+        this.processItems(response.data);
+      })
+    }
+
+    processItems = (items) => {
+      let itemsArr = items.map(itemObj => itemObj.items);
+      this.setState({ items: itemsArr });
+    }
+
 
   render() {
     return (
       <div>
       <div className="App" >
-      {/* <style>{'body { background-color: #87F4ED; }'}</style> */}
         {this.state.isSignedIn ? (
           <span>
             <Header/>
@@ -53,7 +68,6 @@ class App extends Component {
               firebaseAuth={firebase.auth()}
             />
           )}
-          
       </div>
       <Footer/>
       </div>

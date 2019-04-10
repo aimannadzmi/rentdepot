@@ -15,19 +15,19 @@ router.post("/add", (req, res) => {
   const itemLocation = req.body.itemLocation;
   const itemImage = req.body.itemImage;
 
-  console.log("Got student!", student);
+  console.log("Got item!", itemName, itemPrice, itemLocation, itemDescription, itemImage);
 
   db.items.create({ 
     itemName: itemName,
-    itemName: itemPrice,
-    itemName: itemDescription,
-    itemName: itemLocation,
-    itemName: itemImage,
+    itemPrice: itemPrice,
+    itemLocation: itemDescription,
+    itemDescription: itemLocation,
+    itemImage: itemImage
 
-   }).then(() => {
+   }).then((items) => {
     //Created new student!
     
-    res.json({ itemReceived: student });
+    res.json({ itemReceived: items });
   })
 
   
