@@ -1,0 +1,7 @@
+#footerInfo {
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
