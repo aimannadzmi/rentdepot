@@ -116,8 +116,8 @@ export class Inbox extends Component {
   render() {
     return (
       <div>
-        <div className="container">
-          <h2>Send and Receive Messages from other users...</h2>
+        <div className="container center">
+          <h2>Inbox</h2>
           <InboxHtml parent={this} />
           <ModalCompose sendTo={this.state.selected.fromAddress} />
           <ModalMessage ref={this.ModalMessage} message={this.state.selected} />
