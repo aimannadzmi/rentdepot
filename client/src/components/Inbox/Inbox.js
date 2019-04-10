@@ -16,6 +16,7 @@ import { InboxHtml } from "./templates/InboxHtml";
 import ModalCompose from "./ModalCompose";
 import ModalMessage from "./ModalMessage";
 import messages from "./messages.json";
+import "./Inbox.css";
 
 export class Inbox extends Component {
   constructor(props) {
@@ -117,12 +118,12 @@ export class Inbox extends Component {
     return (
       <div>
         <div className="container center">
-          <h2>Inbox</h2>
+        <h2>Inbox</h2>
           <InboxHtml parent={this} />
           <ModalCompose sendTo={this.state.selected.fromAddress} />
           <ModalMessage ref={this.ModalMessage} message={this.state.selected} />
+          </div>
         </div>
-      </div>
         );
       }
     }

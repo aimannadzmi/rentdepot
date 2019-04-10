@@ -10,3 +10,8 @@
 #searchBar {
     margin-bottom: 20px;
 }
+
+#center {
+    position: relative;
+    right: 10%;
+}
