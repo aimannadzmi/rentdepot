@@ -25,10 +25,18 @@
 .submitForm {
     border-radius: 5px;
     width: 100px;
-    box-shadow: 0 1px 3px #999, 0 1px 3px grey;
-
+    box-shadow: 0 1px 3px teal, 0 1px 3px teal;
 }
 
 .submitForm:hover {
     color: teal;
+}
+
+#buttoncolor {
+    background-color:teal;
+}
+
+#buttoncolor:hover{
+    color: teal;
+    background-color:white;
 }
