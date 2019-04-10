@@ -6,6 +6,7 @@ import Profile from "../Profile/Profile.js";
 import Contact from "../Contact/Contact.js";
 import Post from "../Post/Post.js";
 import "./Navbar.css"
+import Footer from "../Footer/Footer.js"
 
 export default class Navbar extends Component {
     render() {
@@ -22,6 +23,7 @@ export default class Navbar extends Component {
                             </nav>
                         </div>
                     </div>
+                    <Footer/>
                 </div>
 
 
