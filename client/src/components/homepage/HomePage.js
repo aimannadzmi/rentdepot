@@ -1,8 +1,6 @@
 import React, { Component } from "react"
-import "./HomePage.css";
-
+import "./HomePage.css"
 import Search from "../Search/Search.js";
-import firebase from "firebase"
 import axios from "axios"
 import RentList from "../RentList/RentList"
 
