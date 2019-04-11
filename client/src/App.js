@@ -7,11 +7,15 @@ import Header from "./components/Header/Header.js"
 import axios from "axios"
 // import Navbar from "./components/Navbar/Navbar"
 
-
-firebase.initializeApp({
+var config = {
   apiKey: "AIzaSyAK2iUyH64f3JJWBpgEBSg_lSF_gqV5v-s",
-  authDomain: "rentdepot-afe00.firebaseapp.com"
-})
+  authDomain: "rentdepot-afe00.firebaseapp.com",
+  databaseURL: "https://rentdepot-afe00.firebaseio.com",
+  projectId: "rentdepot-afe00",
+  storageBucket: "rentdepot-afe00.appspot.com",
+  messagingSenderId: "754128934156"
+};
+const fire = firebase.initializeApp(config);
 
 class App extends Component {
 

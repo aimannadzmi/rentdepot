@@ -4,6 +4,7 @@ import HomePage from "../homepage/HomePage.js";
 import Inbox from "../Inbox/Inbox.js";
 import Profile from "../Profile/Profile.js";
 import Contact from "../Contact/Contact.js";
+import ChatPage from "../ChatPage/ChatPage.js";
 import Post from "../Post/Post.js";
 import "./Navbar.css"
 import Footer from "../Footer/Footer.js"
@@ -19,6 +20,7 @@ export default class Navbar extends Component {
                                 <ul><Link to={"/"}><span>Home</span></Link></ul> 
                                 <ul><Link to={"/Post"}><span>Post Item</span></Link></ul> 
                                 <ul><Link to={"/Inbox"}><span>Messages</span></Link></ul> 
+                                <ul><Link to={"/ChatPage"}><span>Chat</span></Link></ul>
                                 <ul id="navMove"><Link to={"/Profile"}><span>My Profile</span></Link></ul>
                             </nav>
                         </div>
@@ -32,6 +34,7 @@ export default class Navbar extends Component {
                     <Route path="/Inbox" component={Inbox} />
                     <Route path="/Profile" component={Profile} />
                     <Route path="/Post" component={Post} />
+                    <Route path="/ChatPage" component={ChatPage} />
                     <Route path="/Contact" component={Contact} />
                 </Switch>
             </Router>
