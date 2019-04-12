@@ -1,6 +1,6 @@
-import React, { Component } from './node_modules/react';
-import firebase from './node_modules/firebase';
-
+import React, { Component } from 'react';
+import firebase from 'firebase';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 class Chatlist extends Component {
@@ -12,7 +12,7 @@ class Chatlist extends Component {
     getChatRooms = () => {
         var chatsDB = firebase
             .database()
-            .ref('mychats/' + this.props.user1)
+            .ref('mychats/' + firebase.auth().currentUser.displayName)
         chatsDB.on('value', snapshot => {
             let newChats = []
             snapshot.forEach(child => {
@@ -27,15 +27,19 @@ class Chatlist extends Component {
     render() {
         return (
             <div className="list" id="chatRoom">
-            <h2>Chat List</h2>
+                <h2>Chat List</h2>
                 {this.state.chats.map((chat) =>
                     <li key={chat.chatRoomName}>
-                        {chat.user2} / {chat.chatRoomName}
+                        <Link to={"/ChatPage/" + chat.user2} >
+                            {chat.user2}
+                        </Link>
+
+
                     </li>
                 )}
             </div>
         )
     }
-} 
+}
 
 export default Chatlist;

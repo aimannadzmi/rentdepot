@@ -34,7 +34,7 @@ export default class Navbar extends Component {
                     <Route path="/Inbox" component={Inbox} />
                     <Route path="/Profile" component={Profile} />
                     <Route path="/Post" component={Post} />
-                    <Route path="/ChatPage" component={ChatPage} />
+                    <Route path="/ChatPage/:user2?" component={ChatPage} />
                     <Route path="/Contact" component={Contact} />
                 </Switch>
             </Router>
