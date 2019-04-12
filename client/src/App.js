@@ -5,6 +5,7 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import Footer from "./components/Footer/Footer.js"
 import Header from "./components/Header/Header.js"
 import axios from "axios"
+
 // import Navbar from "./components/Navbar/Navbar"
 
 var config = {
@@ -18,7 +19,7 @@ var config = {
 const fire = firebase.initializeApp(config);
 
 class App extends Component {
-
+  
   state = { 
     isSignedIn: false,
     items : []
@@ -80,3 +81,4 @@ class App extends Component {
 }
 
 export default App;
+

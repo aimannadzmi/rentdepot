@@ -8,6 +8,17 @@ router.get("/", (req, res) => {
   });
 })
 
+router.get("/get", (req, res) => {
+  
+  db.items.findAll({
+    where: {
+      itemName: itemName
+    }
+  }).then(items => {
+    res.json(items);
+  });
+})
+
 router.post("/add", (req, res) => {
   const itemName = req.body.itemName;
   const itemPrice = req.body.itemPrice;
