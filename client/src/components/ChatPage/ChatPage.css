@@ -1,0 +1,17 @@
+#friendList {
+    border: solid;
+    width: 300px;
+    height: 700px;
+}
+
+body {
+    background: teal;
+}
+
+.center {
+
+    position:relative;
+    left: 17%;
+    top: 3%;
+    
+}
