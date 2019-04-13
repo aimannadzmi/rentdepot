@@ -2,3 +2,29 @@
     float:left;
     margin-left: 5%;
 }
+
+#saveItemButton {
+    position: relative;
+    left: 75%;
+    margin-bottom: 7%;
+   
+}
+
+#contactItemOwnerButton {
+    position: relative;
+    left: 65%;
+    margin-top: 7%;
+    
+}
+
+#itemPricePosted {
+    position: relative;
+    left: 20%;
+    margin-top: 7%;
+}
+
+#itemNamePosted {
+    position: relative;
+    left: 2%;
+    margin-top: 7%;
+}

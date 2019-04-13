@@ -19,7 +19,7 @@ export default class Navbar extends Component {
                             <nav className="navbar">
                                 <ul><Link to={"/"}><span>Home</span></Link></ul> 
                                 <ul><Link to={"/Post"}><span>Post Item</span></Link></ul> 
-                                <ul><Link to={"/Inbox"}><span>Messages</span></Link></ul> 
+                                {/* <ul><Link to={"/Inbox"}><span>Messages</span></Link></ul>  */}
                                 <ul><Link to={"/ChatPage"}><span>Chat</span></Link></ul>
                                 <ul id="navMove"><Link to={"/Profile"}><span>My Profile</span></Link></ul>
                             </nav>
@@ -31,7 +31,8 @@ export default class Navbar extends Component {
 
                 <Switch>
                     <Route exact path="/" component={HomePage} />
-                    <Route path="/Inbox" component={Inbox} />
+                    {/* <Route path="/HomePage" component={HomePage} /> */}
+                    {/* <Route path="/Inbox" component={Inbox} /> */}
                     <Route path="/Profile" component={Profile} />
                     <Route path="/Post" component={Post} />
                     <Route path="/ChatPage/:user2?" component={ChatPage} />

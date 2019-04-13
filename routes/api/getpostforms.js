@@ -2,7 +2,7 @@ const router = require("express").Router();
 const db = require("../../models");
 
 // get all listings
-router.get("/get", (req, res) => {
+router.get("/", (req, res) => {
   db.items.findAll().then(items => {
     res.json(items);
   });

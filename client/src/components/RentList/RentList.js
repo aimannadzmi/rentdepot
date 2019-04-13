@@ -5,26 +5,30 @@ import {Button, ButtonToolbar} from "react-bootstrap"
 
 const RentList = (props) => {
         return (
-            <div className="col-lg-3" id="showItems">
+            <div className="col-lg-5" id="showItems">
                     <div className="container"><br></br>
                         <div className="row">
                             <div className="col-lg-6" id="rentImage">
                             <img src={props.itemImage}></img>
+                            </div>
+                            <div className="row col-sm-4 postItemButtons">
+                            {/* <a href={"/ChatPage/" + props.username}>chat</a> */}
+                            <ButtonToolbar>
+                            <Button variant="outline-info" id="saveItemButton">Save</Button>
+                            <br/>
+                            <Button variant="info" id= "contactItemOwnerButton" href={"/ChatPage/" + props.username}>Contact</Button>
+                            </ButtonToolbar>
+                            {/* <MyVerticallyCenteredModal/> */}
+                            </div>
                         </div>
-                        </div>
-                        <div className="col-lg-6" id="rentDetails">
-                        <div className="row">
-                            <div className="col-sm-6">
+                        <div className="col-lg-12 row" id="rentDetails">
+                        
+                            <div className="col-sm-6" id="itemNamePosted">
                                 {props.itemName}
                             </div>
-                            <div className="col-sm-6">$ {props.itemPrice} per day
+                            <div className="col-sm-6" id="itemPricePosted">$ {props.itemPrice} per day
                             </div>
-                            <div className="row col-sm-6">
-                            <ButtonToolbar>
-                            <Button variant="info">Info</Button>
-                            </ButtonToolbar>
-                            <MyVerticallyCenteredModal/>
-                            </div>
+                            
                             {/* <div className="row">
                             <div className="col-lg-12">
                                 {props.itemLocation}
@@ -43,7 +47,7 @@ const RentList = (props) => {
                         </div>
 
                     </div>
-                </div>
+                
         );
 }
 
