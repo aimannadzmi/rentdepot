@@ -76,7 +76,7 @@ class HomePage extends Component {
                          <RentList itemName={item.itemName}
                                  itemPrice={item.itemPrice}
                                  itemLocation={item.itemLocation}
-                                 itemDescription={item.itemDescription}
+                                //  itemDescription={item .itemDescription}
                                  itemImage={item.itemImage}/>
                          )}
                 
