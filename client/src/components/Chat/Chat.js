@@ -107,8 +107,8 @@ class Chat extends Component {
     
             <h2>{this.props.user1}</h2>
             <h2>{this.props.user2}</h2>  
-              </List>
-              <TextField
+              </List> 
+               <TextField
                 autoFocus={true}
                 multiline={true}
                 fullWidth={true}
@@ -117,10 +117,7 @@ class Chat extends Component {
                 onChange={event => this.setState({ text: event.target.value })}
                 value={this.state.text}
                 onKeyPress={this.onSubmit}
-
               />
-    
-    
             </div>
         );
       }

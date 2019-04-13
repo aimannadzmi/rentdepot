@@ -30,13 +30,13 @@ export default class Navbar extends Component {
 
 
                 <Switch>
-                    <Route exact path="/" component={HomePage} />
                     {/* <Route path="/HomePage" component={HomePage} /> */}
                     {/* <Route path="/Inbox" component={Inbox} /> */}
                     <Route path="/Profile" component={Profile} />
                     <Route path="/Post" component={Post} />
                     <Route path="/ChatPage/:user2?" component={ChatPage} />
                     <Route path="/Contact" component={Contact} />
+                    <Route exact path="/:search?" component={HomePage} />
                 </Switch>
             </Router>
         );

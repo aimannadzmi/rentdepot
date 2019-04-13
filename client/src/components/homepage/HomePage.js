@@ -48,6 +48,7 @@ class HomePage extends Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault();
+        this.props.history.push("/" + this.state.search)
         const data = this.state.search
         console.log(data);
 
