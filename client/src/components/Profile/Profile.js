@@ -3,6 +3,7 @@ import "./Profile.css"
 import firebase from "firebase"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Post from "../Post/Post"
+import UserItems from "./UserItems"
 import axios from "axios"
 
 export default class Profile extends Component {
@@ -16,13 +17,12 @@ export default class Profile extends Component {
     };
 
     componentDidMount = () => {
-
         this.appendItems();
     }
 
     appendItems = () => {
-        axios.get("/api/getpostforms/get/" + this.state.search
-          ).then(response => {
+        axios.get("/api/getpostforms/get/myprofile/" + this.state.user
+        ).then(response => {
             this.setState({ items: response.data });
             console.log("user's items added", response);
           })
@@ -45,15 +45,14 @@ export default class Profile extends Component {
                 <div className="col-lg-7" id="rentList">
                     <div className="rentList">
                     <h4>My Items</h4>
+                    {/* <UserItems item={item.itemName}/> */}
                     {this.state.items.map(item => 
-                         <li itemName={item.itemName}
+                         <UserItems itemName={item.itemName}
                                  itemPrice={item.itemPrice}
                                  itemLocation={item.itemLocation}
                                  itemDescription={item.itemDescription}
                                  itemImage={item.itemImage}/>
                          )}
-
-                    <div className="rentedItems"></div>
                     </div>
                 </div>
                 <div className="col-lg-12" id="favoritesList">
