@@ -19,7 +19,7 @@ class HomePage extends Component {
     }
 
     updateItems = () => {
-        axios.get("/api/getpostforms/get").then(response => {
+        axios.get("/api/getpostforms/").then(response => {
             this.setState({ items: response.data });
             console.log("posted items", response)
         })
@@ -77,7 +77,8 @@ class HomePage extends Component {
                                  itemPrice={item.itemPrice}
                                  itemLocation={item.itemLocation}
                                 //  itemDescription={item .itemDescription}
-                                 itemImage={item.itemImage}/>
+                                 itemImage={item.itemImage}
+                                 username={item.username}/>
                          )}
                 
             </div>

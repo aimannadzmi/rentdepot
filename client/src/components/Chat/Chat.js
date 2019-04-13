@@ -6,7 +6,10 @@ import { TextField, List, ListItem, ListItemText } from '@material-ui/core';
 class Chat extends Component {
     constructor(props) {
         super(props)
-        this.state = { text: '', messages: {} }
+        this.state = { text: '',
+         messages: {},
+        //  getUser2: ""
+         }
       }
     
       componentDidMount() {
