@@ -68,14 +68,20 @@ class App extends Component {
             <Header/>
           </span>
         ) : (
+          
+          <div className="colorfulSignIn container"> 
+          <div className="centerLogin">
             <StyledFirebaseAuth
               uiConfig={this.uiConfig}
               firebaseAuth={firebase.auth()}
             />
+            </div>
+            </div>
           )}
       </div>
       <Footer/>
       </div>
+      
     )
   }
 }
