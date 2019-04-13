@@ -14,23 +14,36 @@ export default class Form extends Component {
             itemPrice: '',
             itemDescription: '',
             itemLocation: '',
-            itemImage: null
+            itemImage: ''
         }
     };
-    // selectedFileHandler = (e) => {
-    //     this.setState({
-    //          itemImage: e.target.files[0]
-    //     })
-    // }
+    selectedFileHandler = (e) => {
+        e.preventDefault();
+        this.setState({
+             itemImage: e.target.files[0]
+        })
+        console.log(e.target.files[0])
+        console.log("this hit")
+    }
     
+    handleUpload = (e) => {
+        // e.preventDefault();
+        console.log("this 2")
+        let file = this.state.itemImage
+        let imageData = new FormData()
+
+        imageData.append('image', file)
+        imageData.append('name', this.state.itemImage)
+    }
+
     handleInputChange = (e) => {
         this.setState({
-            [e.target.name]: e.target.value,
-           
+            [e.target.name]: e.target.value
         })
     }
     handleFormSubmit = (e) => {
         e.preventDefault();
+        this.handleUpload();
         const data = this.state
         console.log(data);
 
@@ -43,22 +56,15 @@ export default class Form extends Component {
             itemImage: this.state.itemImage
           }).then(response => {
             console.log("Item added", response);
-      
+            // alert("your item has been posted!")
             // Tell our parent component that we've updated the database
             if (this.props.afterAddCallback) {
               this.props.afterAddCallback();
-              alert("your item has been posted!")
             }
           })
 
     }
-//     handleFileUpload({ file }) {
-//         const file = files[0];
-//         this.props.actions.uploadRequest({
-//      file,
-//      name: 'Awesome Cat Pic'
-//   })
-// }
+
     render() {
         return (
             <div className="container" id="postForm">
@@ -116,14 +122,15 @@ export default class Form extends Component {
                                         id="exampleFormControlFile1"
                                         name="itemImage"
                                         method="post" enctype="multipart/form-data"
-                                        onChange={this.handleInputChange}
-                                        value={this.state.itemImage}  />
+                                        onChange={this.selectedFileHandler}
+                                        // value={this.state.itemImage}
+                                          />
                                     </div>
                                 </div>
                                 <input type="submit"
                                 //  onClick={()=>{ alert("Your item has been posted!"); }}
                                   className="submitForm"
-                                   id ="buttoncolor" 
+                                   id="buttoncolor" 
                                    value="Post Item"/>
                             </form>
                         </div>

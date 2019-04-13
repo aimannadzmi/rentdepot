@@ -35,8 +35,8 @@ router.get("/get/myprofile/:username", (req, res) => {
 
 })
 
-
 router.post("/add", (req, res) => {
+  console.log("add post route hit")
   const username = req.body.username;
   const itemName = req.body.itemName;
   const itemPrice = req.body.itemPrice;
