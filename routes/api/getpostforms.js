@@ -1,23 +1,37 @@
 const router = require("express").Router();
 const db = require("../../models");
 
-//   /api/students
+// get all listings
 router.get("/get", (req, res) => {
   db.items.findAll().then(items => {
     res.json(items);
   });
 })
 
-router.get("/get/:search", (req, res) => {
+// get specific listing
+router.get("/get/search/:itemName", (req, res) => {
   console.log("searching")
   db.items.findAll({
     where: {
-      search: req.params.itemName
+      itemName: req.params.itemName
     }
   }).then(items => {
     res.json(items);
   });
 })
+
+// get user's listings
+
+// router.get("/get/:user", (req, res) => {
+//   console.log("searching")
+//   db.items.findAll({
+//     where: {
+//       user: req.params.user
+//     }
+//   }).then(items => {
+//     res.json(items);
+//   });
+// })
 
 
 router.post("/add", (req, res) => {
