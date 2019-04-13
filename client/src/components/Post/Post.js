@@ -5,6 +5,8 @@ import firebase from "firebase"
 
 
 export default class Form extends Component {
+    fileInput = React.createRef();
+
     constructor(props) {
         super(props)
         let userName = firebase.auth().currentUser.displayName;
@@ -26,15 +28,6 @@ export default class Form extends Component {
         console.log("this hit")
     }
     
-    handleUpload = (e) => {
-        // e.preventDefault();
-        console.log("this 2")
-        let file = this.state.itemImage
-        let imageData = new FormData()
-
-        imageData.append('image', file)
-        imageData.append('name', this.state.itemImage)
-    }
 
     handleInputChange = (e) => {
         this.setState({
@@ -43,18 +36,22 @@ export default class Form extends Component {
     }
     handleFormSubmit = (e) => {
         e.preventDefault();
-        this.handleUpload();
         const data = this.state
         console.log(data);
 
-        axios.post("/api/getpostforms/add", {
-            username: this.state.user,
-            itemName: this.state.itemName,
-            itemPrice: this.state.itemPrice,
-            itemLocation: this.state.itemLocation,
-            itemDescription: this.state.itemDescription,
-            itemImage: this.state.itemImage
-          }).then(response => {
+        let file = this.fileInput.current.files[0];
+        let formData = new FormData()
+
+        // Because it is a multi-part form with file data, we have to build the form data like this
+        formData.append('image', file)
+        formData.append('username', this.state.user);
+        formData.append('itemName', this.state.itemName);
+        formData.append('itemPrice', this.state.itemPrice);
+        formData.append('itemLocation', this.state.itemLocation);
+        formData.append('itemDescription', this.state.itemDescription);
+        formData.append('itemImage', this.state.itemImage);
+        
+        axios.post("/api/getpostforms/add", formData).then(response => {
             console.log("Item added", response);
             // alert("your item has been posted!")
             // Tell our parent component that we've updated the database
@@ -122,7 +119,7 @@ export default class Form extends Component {
                                         id="exampleFormControlFile1"
                                         name="itemImage"
                                         method="post" enctype="multipart/form-data"
-                                        onChange={this.selectedFileHandler}
+                                        ref={this.fileInput}
                                         // value={this.state.itemImage}
                                           />
                                     </div>
