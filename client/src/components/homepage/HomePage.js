@@ -5,9 +5,12 @@ import axios from "axios"
 import RentList from "../RentList/RentList"
 
 class HomePage extends Component {
-    state = {
-        items: [],
-        search: ""
+    constructor(props) {
+        super(props)
+        this.state = {
+            items: [],
+            search: ""
+        }
     };
 
     componentDidMount = () => {
@@ -23,11 +26,16 @@ class HomePage extends Component {
     }
 
     appendItems = () => {
-        axios.get("/api/getpostforms/get/" + this.state.search
-          ).then(response => {
-            this.setState({ items: response.data });
-            console.log("search item posted", response);
-          })
+        if (this.state.search === "") {
+            this.updateItems();
+        }else {
+            axios.get("/api/getpostforms/get/search/" + this.state.search
+            ).then(response => {
+              this.setState({ items: response.data });
+              console.log("search item posted", response);
+            })
+        }
+        
     }
 
     handleInputChange = (e) => {
