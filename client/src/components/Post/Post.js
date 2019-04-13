@@ -35,7 +35,7 @@ export default class Form extends Component {
         console.log(data);
 
         axios.post("/api/getpostforms/add", {
-            user: this.state.user,
+            username: this.state.user,
             itemName: this.state.itemName,
             itemPrice: this.state.itemPrice,
             itemLocation: this.state.itemLocation,

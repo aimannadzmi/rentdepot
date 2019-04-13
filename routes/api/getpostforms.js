@@ -21,21 +21,23 @@ router.get("/get/search/:itemName", (req, res) => {
 })
 
 // get user's listings
+router.get("/get/myprofile/:username", (req, res) => {
+  console.log("user profile append item hit")
+  db.items.findAll({
+    where: {
+      username: req.params.username
+    }
+  }).then(items => {
+    res.json(items);
+  });
+  console.log("item appended")
 
-// router.get("/get/:user", (req, res) => {
-//   console.log("searching")
-//   db.items.findAll({
-//     where: {
-//       user: req.params.user
-//     }
-//   }).then(items => {
-//     res.json(items);
-//   });
-// })
+
+})
 
 
 router.post("/add", (req, res) => {
-  // const user = req.body.user;
+  const username = req.body.username;
   const itemName = req.body.itemName;
   const itemPrice = req.body.itemPrice;
   const itemDescription = req.body.itemDescription;
@@ -45,7 +47,7 @@ router.post("/add", (req, res) => {
   console.log("Got item!", itemName, itemPrice, itemLocation, itemDescription, itemImage);
 
   db.items.create({
-    // user: user, 
+    username: username, 
     itemName: itemName,
     itemPrice: itemPrice,
     itemLocation: itemDescription,

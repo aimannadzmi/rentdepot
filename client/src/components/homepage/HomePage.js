@@ -21,8 +21,9 @@ class HomePage extends Component {
     updateItems = () => {
         axios.get("/api/getpostforms/get").then(response => {
             this.setState({ items: response.data });
+            console.log("posted items", response)
         })
-        console.log("posted items")
+        
     }
 
     appendItems = () => {

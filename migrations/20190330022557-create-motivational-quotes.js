@@ -2,11 +2,9 @@
 module.exports = {
   up: (db, Sequelize) => {
     return db.createTable('items', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
+      username: {
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       itemName: {
         type: Sequelize.STRING
