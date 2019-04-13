@@ -26,15 +26,13 @@ class Chatlist extends Component {
 
     render() {
         return (
-            <div className="list" id="chatRoom">
+            <div className="list">
                 <h2>Chat List</h2>
                 {this.state.chats.map((chat) =>
                     <li key={chat.chatRoomName}>
                         <Link to={"/ChatPage/" + chat.user2} >
                             {chat.user2}
                         </Link>
-
-
                     </li>
                 )}
             </div>

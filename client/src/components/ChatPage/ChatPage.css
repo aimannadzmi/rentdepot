@@ -1,17 +1,62 @@
-#friendList {
-    border: solid;
-    width: 300px;
-    height: 700px;
+#chatList {
+    border-style: solid;
+    width: 200px;  
+    margin-bottom: 15%;
+    box-shadow: 0 3px 6px teal, 0 3px 6px teal;
+    margin-top: 15%;
 }
 
-body {
-    background: teal;
+#chatRoom{
+    width: 500px;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    /* padding: 5%; */
+    padding-bottom: 5%;
+    padding-top: 5%;
+    /* padding-left: 5%; */
+    /* padding-right: 5%; */
+    box-shadow: 0 3px 6px teal, 0 3px 6px teal;
+    border-color: teal;
+    border-style: solid;
+    margin-bottom: 5%;
+    left: 375px;
+    height: 700px;
+    width: 600px;
+    /* top: 3%;      */
+    /* width */
+}
+
+
+
+/* 
+ body {
+    background-color: teal;
 }
 
 .center {
-
     position:relative;
     left: 17%;
     top: 3%;
     
-}
+}  */
+
+/* 
+div {
+    background: #ccc;
+    padding: 20px;
+    width: 150px;
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+  }
+   */
+  /* p {
+    background: #fff;
+    padding: 10px;
+  }
+  
+  .other {
+    align-self: flex-end;
+    background: #ddd;
+  } */
