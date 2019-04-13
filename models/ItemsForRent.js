@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
       itemPrice: DataTypes.TEXT,
       itemDescription: DataTypes.TEXT,
       itemLocation: DataTypes.TEXT,
-      itemImage:DataTypes.TEXT
+      itemImage:DataTypes.BLOB
     });
     return items;
   };
