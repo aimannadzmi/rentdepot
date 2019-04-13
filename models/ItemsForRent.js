@@ -2,6 +2,7 @@
 
 module.exports = function(sequelize, DataTypes) {
     let items = sequelize.define("items", {
+      // user: DataTypes.TEXT,
       itemName: DataTypes.TEXT,
       itemPrice: DataTypes.TEXT,
       itemDescription: DataTypes.TEXT,

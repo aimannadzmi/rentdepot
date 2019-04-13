@@ -6,7 +6,8 @@ import RentList from "../RentList/RentList"
 
 class HomePage extends Component {
     state = {
-        items: []
+        items: [],
+        search: ""
     };
 
     componentDidMount = () => {
@@ -15,16 +16,52 @@ class HomePage extends Component {
     }
 
     updateItems = () => {
-        axios.get("/api/getpostforms").then(response => {
+        axios.get("/api/getpostforms/get").then(response => {
             this.setState({ items: response.data });
         })
+        console.log("posted items")
+    }
+
+    appendItems = () => {
+        axios.get("/api/getpostforms/get/" + this.state.search
+          ).then(response => {
+            this.setState({ items: response.data });
+            console.log("search item posted", response);
+          })
+    }
+
+    handleInputChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+        console.log(e.target.value)
+    }
+
+    handleFormSubmit = (e) => {
+        e.preventDefault();
+        const data = this.state.search
+        console.log(data);
+
+        this.appendItems();
+
     }
 
     render() {
     return (
         <div className="container">
 
-            <Search />
+            {/* <Search /> */}
+
+            <form onSubmit={this.handleFormSubmit} className="form-inline active-cyan-4 center" id="searchBar">
+            <input className="form-control form-control-sm mr-3 w-75 tealColoring"
+             type="text" 
+             placeholder="Search" 
+             aria-label="Search" 
+             name="search"
+             onChange={this.handleInputChange}
+             value={this.state.search}/>
+                <i className="fas fa-search" aria-hidden="true"></i>
+        </form>
             
             {this.state.items.map(item => 
                          <RentList itemName={item.itemName}

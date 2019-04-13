@@ -1,24 +1,32 @@
 import React, { Component } from "react"
 import "./Post.css"
 import axios from "axios"
+import firebase from "firebase"
 
 
 export default class Form extends Component {
     constructor(props) {
         super(props)
+        let userName = firebase.auth().currentUser.displayName;
         this.state = {
+            user: userName,
             itemName: '',
             itemPrice: '',
             itemDescription: '',
             itemLocation: '',
-            itemImage: ''
+            itemImage: null
         }
     };
+    // selectedFileHandler = (e) => {
+    //     this.setState({
+    //          itemImage: e.target.files[0]
+    //     })
+    // }
     
     handleInputChange = (e) => {
         this.setState({
-            [e.target.name]: e.target.value
-
+            [e.target.name]: e.target.value,
+           
         })
     }
     handleFormSubmit = (e) => {
@@ -26,7 +34,8 @@ export default class Form extends Component {
         const data = this.state
         console.log(data);
 
-        axios.post("/api/getpostforms/add", { 
+        axios.post("/api/getpostforms/add", {
+            user: this.state.user,
             itemName: this.state.itemName,
             itemPrice: this.state.itemPrice,
             itemLocation: this.state.itemLocation,
@@ -38,10 +47,18 @@ export default class Form extends Component {
             // Tell our parent component that we've updated the database
             if (this.props.afterAddCallback) {
               this.props.afterAddCallback();
+              alert("your item has been posted!")
             }
           })
 
     }
+//     handleFileUpload({ file }) {
+//         const file = files[0];
+//         this.props.actions.uploadRequest({
+//      file,
+//      name: 'Awesome Cat Pic'
+//   })
+// }
     render() {
         return (
             <div className="container" id="postForm">
@@ -98,11 +115,16 @@ export default class Form extends Component {
                                         className="form-control-file" 
                                         id="exampleFormControlFile1"
                                         name="itemImage"
+                                        method="post" enctype="multipart/form-data"
                                         onChange={this.handleInputChange}
                                         value={this.state.itemImage}  />
                                     </div>
                                 </div>
-                                <input type="submit" onClick={()=>{ alert("Your item has been posted!"); }} className="submitForm" id ="buttoncolor" value="Post Item"/>
+                                <input type="submit"
+                                //  onClick={()=>{ alert("Your item has been posted!"); }}
+                                  className="submitForm"
+                                   id ="buttoncolor" 
+                                   value="Post Item"/>
                             </form>
                         </div>
                     </div>
