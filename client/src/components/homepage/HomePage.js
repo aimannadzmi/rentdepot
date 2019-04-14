@@ -19,7 +19,7 @@ class HomePage extends Component {
     }
 
     updateItems = () => {
-        axios.get("/api/getpostforms/get").then(response => {
+        axios.get("/api/getpostforms/").then(response => {
             this.setState({ items: response.data });
             console.log("posted items", response)
         })
@@ -48,6 +48,7 @@ class HomePage extends Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault();
+        this.props.history.push("/" + this.state.search)
         const data = this.state.search
         console.log(data);
 
@@ -76,8 +77,9 @@ class HomePage extends Component {
                          <RentList itemName={item.itemName}
                                  itemPrice={item.itemPrice}
                                  itemLocation={item.itemLocation}
-                                 itemDescription={item.itemDescription}
-                                 itemImage={item.itemImage}/>
+                                //  itemDescription={item .itemDescription}
+                                 itemImage={item.itemImage}
+                                 username={item.username}/>
                          )}
                 
             </div>

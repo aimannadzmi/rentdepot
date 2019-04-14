@@ -3,7 +3,7 @@ const db = require("../../models");
 const multer = require('multer');
 
 // get all listings
-router.get("/get", (req, res) => {
+router.get("/", (req, res) => {
   db.items.findAll().then(items => {
     res.json(items);
   });
