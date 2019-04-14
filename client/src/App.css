@@ -35,3 +35,14 @@
   top: 60px;
 
 }
+
+.colorfulSignIn {
+  background-color: rgb(61, 189, 189);
+  height: 800px;
+  width:400px;
+}
+
+.centerLogin {
+  position: relative;
+  top:40%;
+}
