@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const db = require("../../models");
+const multer = require('multer');
 
 // get all listings
 router.get("/", (req, res) => {
@@ -36,14 +37,19 @@ router.get("/get/myprofile/:username", (req, res) => {
 
 })
 
-router.post("/add", (req, res) => {
+const storage = multer.memoryStorage();
+const multerUpload = multer({ storage });
+
+// Express route where we receive files from the client
+// passing multer middleware
+router.post("/add", multerUpload.single('image'), (req, res) => {
   console.log("add post route hit")
   const username = req.body.username;
   const itemName = req.body.itemName;
   const itemPrice = req.body.itemPrice;
   const itemDescription = req.body.itemDescription;
   const itemLocation = req.body.itemLocation;
-  const itemImage = req.body.itemImage;
+  const itemImage = req.file.buffer;
 
   console.log("Got item!", itemName, itemPrice, itemLocation, itemDescription, itemImage);
 
