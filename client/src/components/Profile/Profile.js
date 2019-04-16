@@ -25,49 +25,41 @@ export default class Profile extends Component {
         ).then(response => {
             this.setState({ items: response.data });
             console.log("user's items added", response);
-          })
+        })
     }
 
     render() {
-    return (
-        <Router>
-        <div className="container profile">
-            <div className="row">
-                <div className="col-lg-3" id="userProfile">
-                    <div className="col-lg-12">
-                    <img id="userImage" src="" />
+        return (
+            <Router>
+
+                
+                <div className="container profile row d-flex justify-content-center">
+            
+                    <div className="col-md-5" id="rentList">
+                        <div className="rentList">
+                            <h4>My Items</h4>
+                            {/* <UserItems item={item.itemName}/> */}
+                            {this.state.items.map(item =>
+                                <UserItems itemName={item.itemName}
+                                    itemPrice={item.itemPrice}
+                                    itemLocation={item.itemLocation}
+                                    itemDescription={item.itemDescription}
+                                    itemImage={item.itemImage} />
+                            )}
+                        </div>
                     </div>
-                    <div className="col-lg-12">
-                    <h4 id="profileUserName">{this.state.user}</h4>
+                    <div className="col-md-5" id="favoritesList">
+                        <div className="favoriteThings">
+                            <h4>My Favorite Items</h4>
+                            <div className="favorited"></div>
+                        </div>
                     </div>
                 </div>
 
-                <div className="col-lg-7" id="rentList">
-                    <div className="rentList">
-                    <h4>My Items</h4>
-                    {/* <UserItems item={item.itemName}/> */}
-                    {this.state.items.map(item => 
-                         <UserItems itemName={item.itemName}
-                                 itemPrice={item.itemPrice}
-                                 itemLocation={item.itemLocation}
-                                 itemDescription={item.itemDescription}
-                                 itemImage={item.itemImage}/>
-                         )}
-                    </div>
-                </div>
-                <div className="col-lg-12" id="favoritesList">
-                    <div className="favoriteThings">
-                    <h4>My Favorite Items</h4>
-                    <div className="favorited"></div>
-                    </div>
-                </div>          
-            </div>
-        </div>
-
-<Switch>
-<Route path="/Post" component={Post} />
-</Switch>
-</Router>
-    );
-}
+                <Switch>
+                    <Route path="/Post" component={Post} />
+                </Switch>
+            </Router>
+        );
+    }
 }

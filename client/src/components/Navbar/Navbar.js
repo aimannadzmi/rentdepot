@@ -13,7 +13,7 @@ export default class Navbar extends Component {
     render() {
         return (
             <Router>
-                <div className="container nav">
+                <div className="container nav d-flex justify-content-center">
                     <div className="row">
                         <div className="col-lg-8">
                             <nav className="navbar">

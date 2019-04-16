@@ -3,7 +3,9 @@
   width: 200px;  
   margin-bottom: 15%;
   box-shadow: 0 3px 6px teal, 0 3px 6px teal;
+  border-color:white;
   margin-top: 15%;
+  border-radius: 6px;
 }
 
 #chatRoom{
@@ -17,7 +19,7 @@
   /* padding-left: 5%; */
   /* padding-right: 5%; */
   box-shadow: 0 3px 6px teal, 0 3px 6px teal;
-  border-color: teal;
+  border-color: white;
   border-style: solid;
   margin-bottom: 5%;
   left: 375px;

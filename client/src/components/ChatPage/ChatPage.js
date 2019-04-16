@@ -22,12 +22,12 @@ class ChatPage extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
           <div id="chatList">
           <Chatlist />
           </div>
           <br/>
-          <div className='col-lg-12' id="chatRoom">
+          <div className='col-lg-8' id="chatRoom">
             {/* <button onClick={this.handleChatSelect} value='Alex'>Alex</button>
             <button onClick={this.handleChatSelect} value='Mike'>Mike</button> */}
             {this.props.match.params.user2 !== '' && <Chat id="user1" user1={firebase.auth().currentUser.displayName} id="user2" user2={this.props.match.params.user2} />}

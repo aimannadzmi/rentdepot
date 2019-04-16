@@ -5,6 +5,7 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import Footer from "./components/Footer/Footer.js"
 import Header from "./components/Header/Header.js"
 import axios from "axios"
+import Logo from "./logo.png"
 
 // import Navbar from "./components/Navbar/Navbar"
 
@@ -69,9 +70,12 @@ class App extends Component {
           </span>
         ) : (
           
-          <div className="colorfulSignIn container"> 
-          <div className="centerLogin">
-            <StyledFirebaseAuth
+          <div className="colorfulSignIn container d-flex justify-content-center"> 
+          <div className="logoBig d-flex justify-content-center">
+                    <img src={Logo} />
+                </div>
+          <div className="secondElement d-flex justify-content-center">
+            <StyledFirebaseAuth id="secondElementt"
               uiConfig={this.uiConfig}
               firebaseAuth={firebase.auth()}
             />

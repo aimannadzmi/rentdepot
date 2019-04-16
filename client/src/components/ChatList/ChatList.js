@@ -26,7 +26,7 @@ class Chatlist extends Component {
 
     render() {
         return (
-            <div className="list">
+            <div className="list col-sm-3">
                 <h2>Chat List</h2>
                 {this.state.chats.map((chat) =>
                     <li key={chat.chatRoomName}>

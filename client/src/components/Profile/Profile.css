@@ -1,4 +1,4 @@
-.profile {
+/* .profile {
     margin-top: 5%;
 
     margin-bottom: 5%;
@@ -23,9 +23,9 @@
     overflow: hidden;
     padding-bottom: 5%;
     padding-top: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-    box-shadow: 0 3px 6px #999, 0 3px 6px grey;
+    padding-left: 1%;
+    padding-right: 1%;
+    box-shadow: 0 3px 6px teal, 0 3px 6px teal;
     border-color: white;
     border-style: solid;
 }
@@ -36,5 +36,22 @@
 }
 
 #favoritesList {
-    left: -3%
+    right: 2%;
+    margin: 5%;
+} */
+
+#rentList, #favoritesList {
+    margin-top: 2%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    box-shadow: 0 3px 6px teal, 0 3px 6px teal;
+    border-color: white;
+    border-style: solid;
+}
+
+#rentList {
+    margin-right: 2%;
 }

@@ -37,12 +37,23 @@
 }
 
 .colorfulSignIn {
-  background-color: rgb(61, 189, 189);
+  background-color:white;
+  border-radius:10px;
+  border-style: solid;
+  box-shadow: 0 2px 10px teal, 0 2px 2px teal;
+  border-color: white;
   height: 800px;
   width:400px;
+  position: relative;
+  bottom: -10%;
+  margin: 5%;
 }
 
-.centerLogin {
+#logoBig {
+  position: absolute;
+}
+
+.secondElementt {
   position: relative;
-  top:40%;
+  top: 50%;
 }
