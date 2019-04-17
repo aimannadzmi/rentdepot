@@ -3,13 +3,19 @@ import "./HomePage.css"
 import Search from "../Search/Search.js";
 import axios from "axios"
 import RentList from "../RentList/RentList"
+import MyVerticallyCenteredModal from "../Modal/Modal"
+import { Button, ButtonToolbar} from "react-bootstrap"
+import "../Modal/Modal.css"
 
 class HomePage extends Component {
     constructor(props) {
         super(props)
         this.state = {
             items: [],
-            search: ""
+            search: "",
+            modalShow: false,
+            selectedItem: ""
+            
         }
     };
 
@@ -56,7 +62,25 @@ class HomePage extends Component {
 
     }
 
+    expandItemHandler = () => {
+        this.setState({
+            modalShow: true,
+            selectedItem: this.state.items.itemName
+        })
+        this.selectedItemHandler();
+        console.log(this.state.selectedItem)
+    }
+
+    selectedItemHandler = () => {
+        axios.get("/api/getpostforms/get/search/" + this.state.selectedItem
+            ).then(response => {
+              this.setState({ items: response.data });
+              console.log("selected item posted", response);
+            })
+    }
+
     render() {
+        let modalClose = () => this.setState({ modalShow: false });
     return (
         <div className="container">
 
@@ -72,6 +96,18 @@ class HomePage extends Component {
              value={this.state.search}/>
                 <i className="fas fa-search" aria-hidden="true"></i>
         </form>
+
+        <ButtonToolbar>
+     {this.state.items.map(item =>
+        <MyVerticallyCenteredModal
+          show={this.state.modalShow}
+          onHide={modalClose}
+          selectedItemName={item.itemName}
+          selectedItemDescription={item.itemDescription}
+          selectedItemLocation={item.itemLocation}
+
+     /> )}
+      </ButtonToolbar>
             
             {this.state.items.map(item => 
                          <RentList itemName={item.itemName}
@@ -79,7 +115,8 @@ class HomePage extends Component {
                                  itemLocation={item.itemLocation}
                                 //  itemDescription={item .itemDescription}
                                  itemImage={item.itemImage}
-                                 username={item.username}/>
+                                 username={item.username}
+                                 onClick={this.expandItemHandler}/>
                          )}
                 
             </div>

@@ -1,11 +1,12 @@
 import React from "react"
 import "./RentList.css"
-import MyVerticallyCenteredModal from "../Popup/Popup.js"
 import {Button, ButtonToolbar} from "react-bootstrap"
+
 
 const RentList = (props) => {
         return (
-            <div className="col-lg-5" id="showItems">
+
+            <div className="col-lg-5" id="showItems" onClick={props.onClick}>
                     <div className="container"><br></br>
                         <div className="row">
                        <div className="col-lg-6" id="rentImage">
