@@ -9,6 +9,16 @@ import firebase from "firebase";
     storageBucket: "rentdepot-afe00.appspot.com",
     messagingSenderId: "754128934156"
   };
+
+  // var config = {
+  //   apiKey: "AIzaSyDf8z-v-M0oSv88irSmdyaSwXp5eV7gm_w",
+  //   authDomain: "fbchat-19df7.firebaseapp.com",
+  //   databaseURL: "https://fbchat-19df7.firebaseio.com",
+  //   projectId: "fbchat-19df7",
+  //   storageBucket: "fbchat-19df7.appspot.com",
+  //   messagingSenderId: "254855818029"
+  // };
+  
   const fire = firebase.initializeApp(config);
 
   
