@@ -22,7 +22,7 @@ class ChatPage extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
           <div id="chatList">
           <Chatlist />
           </div>

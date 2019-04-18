@@ -1,3 +1,7 @@
 #chatRoom{
     border-style: solid;
 }
+
+#list {
+    margin:0px;
+}
