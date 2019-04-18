@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import "./Post.css"
 import axios from "axios"
 import firebase from "firebase"
+import $ from "jquery"
 
 
 export default class Form extends Component {
@@ -35,6 +36,7 @@ export default class Form extends Component {
         })
     }
     handleFormSubmit = (e) => {
+
         e.preventDefault();
         const data = this.state
         console.log(data);
@@ -61,6 +63,16 @@ export default class Form extends Component {
           })
 
     }
+    
+    formValidation = () => {
+        if(this.state.itemName === "" || this.state.itemPrice === "" || 
+        this.state.itemLocation === "" || this.state.itemDescription === "" ||
+        this.state.itemImage === null){
+            alert("Please fill out every field of the form!")
+        }else {
+            this.handleFormSubmit();
+        }
+    }
 
     render() {
         return (
@@ -69,12 +81,12 @@ export default class Form extends Component {
                     <div className="col-lg-12">
                         <h2>Rent Out Your Item</h2>
                         <div className="formFillOut">
-                            <form onSubmit={this.handleFormSubmit}>
+                            <form onSubmit={this.formValidation}>
                                 <div className="form-group">
                                     <label htmlFor="formGroupExampleInput"></label>
                                     <input type="text" 
                                             className="form-control" 
-                                            id="formGroupExampleInput"
+                                            id="itemNameInput"
                                             placeholder="Item Name"
                                             name="itemName"
                                             onChange={this.handleInputChange}
@@ -116,7 +128,7 @@ export default class Form extends Component {
                                         <div id="uploaditemText">Upload Image</div>
                                         <input type="file" 
                                         className="form-control-file" 
-                                        id="exampleFormControlFile1"
+                                        id="imageUploadInput"
                                         name="itemImage"
                                         method="post" enctype="multipart/form-data"
                                         ref={this.fileInput}

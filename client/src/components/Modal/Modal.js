@@ -1,9 +1,20 @@
 import React, {Component} from "react"
 import {Modal, Button} from "react-bootstrap"
-import Backdrop from "../Backdrop/Backdrop"
 
 export default class MyVerticallyCenteredModal extends Component {
-    
+    constructor(props) {
+        super(props)
+        this.state = {
+            itemName: ""
+        }
+    }
+    returnProps = () => {
+        this.setState({
+            itemName: this.props.selectedItemName
+        })
+    }
+
+
     render() {
         return(
      
@@ -15,15 +26,13 @@ export default class MyVerticallyCenteredModal extends Component {
           >
             <Modal.Header closeButton>
               <Modal.Title id="contained-modal-title-vcenter">
-                Modal heading
+              <h4>{this.props.selectedItemName}</h4>
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <h4>{this.props.selectedItemName}</h4>
+              
               <p>
-                Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-                ac consectetur ac, vestibulum at eros.
+                {this.props.selectedItemDescription}
               </p>
             </Modal.Body>
             <Modal.Footer>
