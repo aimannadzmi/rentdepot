@@ -23,6 +23,13 @@ class Chatlist extends Component {
         })
     }
 
+    handleDeleteChat = (user2) => {
+        console.log(user2);
+        var chat = firebase
+            .database()
+            .ref('mychats/' + firebase.auth().currentUser.displayName + "/" + user2 ).remove()
+    }
+
 
     render() {
         return (
@@ -33,6 +40,7 @@ class Chatlist extends Component {
                         <Link to={"/ChatPage/" + chat.user2} >
                             {chat.user2}
                         </Link>
+                        <button onClick={() => this.handleDeleteChat(chat.user2)} >x</button>
                     </li>
                 )}
             </div>
