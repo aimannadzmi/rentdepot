@@ -4,6 +4,7 @@
   margin-bottom: 15%;
   box-shadow: 0 3px 6px teal, 0 3px 6px teal;
   margin-top: 15%;
+  margin:0 !important;
 }
 
 #chatRoom{
