@@ -65,12 +65,12 @@ class HomePage extends Component {
     expandItemHandler = () => {
         this.setState({
             modalShow: true,
-            selectedItem: this.state.items.itemName
+            selectedItem: this.state.selectedItemName
         })
         this.selectedItemHandler();
         console.log(this.state.selectedItem)
     }
-
+    
     selectedItemHandler = () => {
         axios.get("/api/getpostforms/get/search/" + this.state.selectedItem
             ).then(response => {
@@ -104,7 +104,7 @@ class HomePage extends Component {
           onHide={modalClose}
           selectedItemName={item.itemName}
           selectedItemDescription={item.itemDescription}
-          selectedItemLocation={item.itemLocation}
+       
 
      /> )}
       </ButtonToolbar>
