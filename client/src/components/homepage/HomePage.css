@@ -21,11 +21,13 @@
 .searchField {
     width: 400px;
     border-style: solid;
-
     border-color: grey;
     right: 20%;
     box-shadow: 0 1px 1px , 0 1px 1px ;
+}
 
+#searchBar {
+    margin-bottom: 2%;
 }
 
 h2, h3, h4 {

@@ -1,86 +1,25 @@
-import React, { Component } from "react"
-import "./Post.css"
-import axios from "axios"
-import firebase from "firebase"
-import $ from "jquery"
-import ItemEdit from "../ItemEdit/ItemEdit"
+import React, {Component} from "react"
 
 
-export default class Form extends Component {
-    fileInput = React.createRef();
+export default class ItemEdit extends Component {
+    state = {
+        initialItemName:"",
+        initialItemLocation:"",
+        initialItemDescription:"",
+        initialItemImage:"",
+        newItemName : "",
+        newItemLocation : "",
+        newItemDescription : "",
+        newItemImage : ""
 
-    constructor(props) {
-        super(props)
-        let userName = firebase.auth().currentUser.displayName;
-        this.state = {
-            user: userName,
-            itemName: '',
-            itemPrice: '',
-            itemDescription: '',
-            itemLocation: '',
-            itemImage: ''
-        }
-    };
-    selectedFileHandler = (e) => {
-        e.preventDefault();
-        this.setState({
-             itemImage: e.target.files[0]
-        })
-        console.log(e.target.files[0])
-        console.log("this hit")
-    }
-    
-
-    handleInputChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
-    handleFormSubmit = (e) => {
-        const data = this.state
-        console.log(data);
-
-        let file = this.fileInput.current.files[0];
-        let formData = new FormData()
-
-        // Because it is a multi-part form with file data, we have to build the form data like this
-        formData.append('image', file)
-        formData.append('username', this.state.user);
-        formData.append('itemName', this.state.itemName);
-        formData.append('itemPrice', this.state.itemPrice);
-        formData.append('itemLocation', this.state.itemLocation);
-        formData.append('itemDescription', this.state.itemDescription);
-        formData.append('itemImage', this.state.itemImage);
-        
-        axios.post("/api/getpostforms/add", formData).then(response => {
-            console.log("Item added", response);
-            // alert("your item has been posted!")
-            // Tell our parent component that we've updated the database
-            if (this.props.afterAddCallback) {
-              this.props.afterAddCallback();
-            }
-          })
-
-    }
-    
-    formValidation = (e) => {
-        if(this.state.itemName === "" || this.state.itemPrice === "" || 
-        this.state.itemLocation === "" || this.state.itemDescription === "" ||
-        this.state.itemImage === null){
-            alert("Please fill out every field of the form!")
-        }else {
-            this.handleFormSubmit();
-            e.preventDefault();
-
-        }
     }
 
     render() {
-        return (
+        return(
             <div className="container" id="postForm">
                 <div className="row">
                     <div className="col-lg-12">
-                        <h2>Rent Out Your Item</h2>
+                        <h2>Edit Your Current Item</h2>
                         <div className="formFillOut">
                             <form onSubmit={this.formValidation}>
                                 <div className="form-group">
@@ -126,7 +65,7 @@ export default class Form extends Component {
                                 
                                 <div>
                                     <div className="form-group">
-                                        <div id="uploaditemText">Upload Image</div>
+                                        <div id="uploaditemText">Change Image</div>
                                         <input type="file" 
                                         className="form-control-file" 
                                         id="imageUploadInput"
@@ -141,13 +80,12 @@ export default class Form extends Component {
                                 //  onClick={()=>{ alert("Your item has been posted!"); }}
                                   className="submitForm"
                                    id="buttoncolor" 
-                                   value="Post Item"/>
+                                   value="Edit Item"/>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-        );
+        )
     }
 }
-

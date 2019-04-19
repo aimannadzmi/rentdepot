@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Post from "../Post/Post"
 import UserItems from "./UserItems"
 import axios from "axios"
+import ItemEdit from "../ItemEdit/ItemEdit"
 
 export default class Profile extends Component {
     constructor(props) {
@@ -31,19 +32,9 @@ export default class Profile extends Component {
     render() {
     return (
         <Router>
-        <div className="container profile">
-            <div className="row">
-                <div className="col-lg-3" id="userProfile">
-                    <div className="col-lg-12">
-                    <img id="userImage" src="" />
-                    </div>
-                    <div className="col-lg-12">
-                    <h4 id="profileUserName">{this.state.user}</h4>
-                    </div>
-                </div>
-
-                <div className="col-lg-7" id="rentList">
-                    <div className="rentList">
+        {/* <ItemEdit/> */}
+            <div className="container col-lg-12 row profilePage">
+                    <div className="col-md-5 rentList">
                     <h4>My Items</h4>
                     {/* <UserItems item={item.itemName}/> */}
                     {this.state.items.map(item => 
@@ -53,19 +44,20 @@ export default class Profile extends Component {
                                  itemDescription={item.itemDescription}
                                  itemImage={item.itemImage}/>
                          )}
-                    </div>
-                </div>
-                <div className="col-lg-12" id="favoritesList">
+                         </div>
+                    
+                <div className="col-md-5" id="favoritesList">
                     <div className="favoriteThings">
                     <h4>My Favorite Items</h4>
                     <div className="favorited"></div>
                     </div>
                 </div>          
             </div>
-        </div>
+   
+        
 
 <Switch>
-<Route path="/Post" component={Post} />
+<Route path="/ItemEdit" component={ItemEdit} />
 </Switch>
 </Router>
     );
