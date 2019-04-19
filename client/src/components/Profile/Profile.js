@@ -32,11 +32,12 @@ export default class Profile extends Component {
     render() {
     return (
         <Router>
+
         {/* <ItemEdit/> */}
             <div className="container col-lg-12 row profilePage">
                     <div className="col-md-5 rentList">
+
                     <h4>My Items</h4>
-                    {/* <UserItems item={item.itemName}/> */}
                     {this.state.items.map(item => 
                          <UserItems itemName={item.itemName}
                                  itemPrice={item.itemPrice}
@@ -47,15 +48,14 @@ export default class Profile extends Component {
                          </div>
                     
                 <div className="col-md-5" id="favoritesList">
+
                     <div className="favoriteThings">
                     <h4>My Favorite Items</h4>
                     <div className="favorited"></div>
                     </div>
-                </div>          
+                </div>  
+                </div>        
             </div>
-   
-        
-
 <Switch>
 <Route path="/ItemEdit" component={ItemEdit} />
 </Switch>
