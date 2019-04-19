@@ -23,11 +23,12 @@ class ChatPage extends Component {
   render() {
     return (
       <div>
-          <div id="chatList">
+        <div className="row col-lg-12">
+          <div className="col-md-3" id="chatList">
           <Chatlist />
           </div>
           <br/>
-          <div className='col-lg-12' id="chatRoom">
+          <div className='col-lg-8' id="chatRoom">
             {/* <button onClick={this.handleChatSelect} value='Alex'>Alex</button>
             <button onClick={this.handleChatSelect} value='Mike'>Mike</button> */}
             {this.props.match.params.user2 !== '' && <Chat id="user1" user1={firebase.auth().currentUser.displayName} id="user2" user2={this.props.match.params.user2} />}
@@ -36,6 +37,7 @@ class ChatPage extends Component {
             {/* <Chat user1='Freddy' user2='Alex' /> */}
             {/* <Chatlist user1='Freddy'/> */}
         
+        </div>
         </div>
       </div>
     );

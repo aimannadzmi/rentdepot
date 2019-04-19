@@ -16,7 +16,7 @@
 }
 
 
-#userProfile, #rentList, #favoritesList {
+#userProfile, .rentList, #favoritesList {
     margin-top: 2%;
     background: #fff;
     border-radius: 10px;
@@ -28,13 +28,13 @@
     box-shadow: 0 3px 6px teal, 0 3px 6px teal;
     border-color: white;
     border-style: solid;
+    margin-left: 2%;
 }
 
 #rentList {
-    left:6%;
-
+    left: 15%;
 }
 
 #favoritesList {
-    left:12%;
+    left: 12%
 }
