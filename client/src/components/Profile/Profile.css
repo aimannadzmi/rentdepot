@@ -25,16 +25,16 @@
     padding-top: 5%;
     padding-left: 5%;
     padding-right: 5%;
-    box-shadow: 0 3px 6px #999, 0 3px 6px grey;
+    box-shadow: 0 3px 6px teal, 0 3px 6px teal;
     border-color: white;
     border-style: solid;
 }
 
 #rentList {
-    left: 10%;
+    left:6%;
 
 }
 
 #favoritesList {
-    left: -3%
+    left:12%;
 }

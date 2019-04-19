@@ -32,20 +32,10 @@ export default class Profile extends Component {
     return (
         <Router>
         <div className="container profile">
-            <div className="row">
-                <div className="col-lg-3" id="userProfile">
-                    <div className="col-lg-12">
-                    <img id="userImage" src="" />
-                    </div>
-                    <div className="col-lg-12">
-                    <h4 id="profileUserName">{this.state.user}</h4>
-                    </div>
-                </div>
-
-                <div className="col-lg-7" id="rentList">
+          <div className="row">
+                <div className="col-lg-5" id="rentList">
                     <div className="rentList">
                     <h4>My Items</h4>
-                    {/* <UserItems item={item.itemName}/> */}
                     {this.state.items.map(item => 
                          <UserItems itemName={item.itemName}
                                  itemPrice={item.itemPrice}
@@ -55,14 +45,16 @@ export default class Profile extends Component {
                          )}
                     </div>
                 </div>
-                <div className="col-lg-12" id="favoritesList">
+           
+                <div className="col-lg-5" id="favoritesList">
                     <div className="favoriteThings">
                     <h4>My Favorite Items</h4>
                     <div className="favorited"></div>
                     </div>
-                </div>          
+                </div>  
+                </div>        
             </div>
-        </div>
+       
 
 <Switch>
 <Route path="/Post" component={Post} />
