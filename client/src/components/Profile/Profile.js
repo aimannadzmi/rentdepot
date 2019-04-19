@@ -55,7 +55,6 @@ export default class Profile extends Component {
                     </div>
                 </div>  
                 </div>        
-            </div>
 <Switch>
 <Route path="/ItemEdit" component={ItemEdit} />
 </Switch>
