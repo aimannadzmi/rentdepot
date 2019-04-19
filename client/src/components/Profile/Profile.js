@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Profile.css"
 import firebase from "firebase"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Post from "../Post/Post"
 import UserItems from "./UserItems"
 import axios from "axios"
 import ItemEdit from "../ItemEdit/ItemEdit"
