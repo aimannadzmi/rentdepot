@@ -77,7 +77,7 @@ export default class Form extends Component {
 
     render() {
         return (
-            <div className="container" id="postForm" style="border-color:white">
+            <div className="container" id="postForm">
                 <div className="row">
                     <div className="col-lg-12">
                         <h2>Rent Out Your Item</h2>
