@@ -54,7 +54,7 @@ export default class Form extends Component {
         
         axios.post("/api/getpostforms/add", formData).then(response => {
             console.log("Item added", response);
-            // alert("your item has been posted!")
+            alert("your item has been posted!")
             // Tell our parent component that we've updated the database
             if (this.props.afterAddCallback) {
               this.props.afterAddCallback();
@@ -108,7 +108,7 @@ export default class Form extends Component {
                                     <input type="text" 
                                             className="form-control" 
                                             id="formGroupExampleInput"
-                                            placeholder="ZIP Code"
+                                            placeholder="City"
                                             name="itemLocation"
                                             onChange={this.handleInputChange}
                                             value={this.state.itemLocation} />

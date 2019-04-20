@@ -5,11 +5,11 @@ import {Button, ButtonToolbar} from "react-bootstrap"
 
 const RentList = (props) => {
         return (
-
-            <div className="col-lg-5" id="showItems" onClick={props.onClick}>
+            // onClick={props.onClick}
+            <div className="col-lg-5" id="showItems">
                     <div className="container"><br></br>
                         <div className="row">
-                       <div className="col-lg-6" id="rentImage">
+                       <div className="rentImage">
                             <img src={dbImageToBase64(props.itemImage)}></img>
 
             
@@ -17,7 +17,7 @@ const RentList = (props) => {
                             <div className="row col-sm-4 postItemButtons">
                             {/* <a href={"/ChatPage/" + props.username}>chat</a> */}
                             <ButtonToolbar>
-                            <Button variant="outline-info" id="saveItemButton">Save</Button>
+                            <Button variant="outline-info" id="saveItemButton" href={"/Profile/" + props.saveditem}>Save</Button>
                             <br/>
                             <Button variant="info" id= "contactItemOwnerButton" href={"/ChatPage/" + props.username}>Contact</Button>
                             </ButtonToolbar>
@@ -33,17 +33,18 @@ const RentList = (props) => {
                             <div className="col-sm-6" id="itemPricePosted">$ {props.itemPrice} per day
                             </div>
                             
-                            {/* <div className="row">
-                            <div className="col-lg-12">
+                            <div className="row">
+                            <div className="col-lg-12" id="itemLocation"> Location: 
                                 {props.itemLocation}
                             </div>
+                            <br/>
                             </div>
-                            <div className="row">
+                            <div className="row" id="itemDescription"> 
+                            <div className="col-lg-12"> Description: 
                                 {props.itemDescription}
-                            <div className="col-lg-12">
 
                             </div>
-                            </div> */}
+                            </div>
 
                         </div>
                        

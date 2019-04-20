@@ -23,7 +23,7 @@ class ChatPage extends Component {
   render() {
     return (
       <div>
-        <div className="row col-lg-12">
+        <div className="row col-lg-12" id="chattyStuff">
           <div className="col-md-3" id="chatList">
           <Chatlist />
           </div>

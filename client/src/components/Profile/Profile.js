@@ -34,7 +34,7 @@ export default class Profile extends Component {
 
         {/* <ItemEdit/> */}
             <div className="container col-lg-12 row profilePage">
-                    <div className="col-md-5 rentList">
+                    <div className="col-md-6 rentList">
 
                     <h4>My Items</h4>
                     {this.state.items.map(item => 
@@ -42,7 +42,8 @@ export default class Profile extends Component {
                                  itemPrice={item.itemPrice}
                                  itemLocation={item.itemLocation}
                                  itemDescription={item.itemDescription}
-                                 itemImage={item.itemImage}/>
+                                 itemImage={item.itemImage}
+                                 itemId={item.id}/>
                          )}
                          </div>
                     
@@ -50,7 +51,13 @@ export default class Profile extends Component {
 
                     <div className="favoriteThings">
                     <h4>My Favorite Items</h4>
-                    <div className="favorited"></div>
+                    {this.state.items.map(item => 
+                         <UserItems itemName={item.itemName}
+                                 itemPrice={item.itemPrice}
+                                 itemLocation={item.itemLocation}
+                                 itemDescription={item.itemDescription}
+                                 itemImage={item.itemImage}/>
+                         )}
                     </div>
                 </div>  
                 </div>        

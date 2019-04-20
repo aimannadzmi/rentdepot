@@ -17,7 +17,7 @@
 
 
 #userProfile, .rentList, #favoritesList {
-    margin-top: 2%;
+    margin-top: 5%;
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -36,5 +36,5 @@
 }
 
 #favoritesList {
-    left: 12%
+    left: 8%
 }
