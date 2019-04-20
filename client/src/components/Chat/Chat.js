@@ -100,12 +100,6 @@ class Chat extends Component {
     ))
   }
 
-  handleDeleteChat = (e) => {
-    var chat = firebase
-      .database()
-      .ref('mychats/' + firebase.auth().currentUser.displayName + "/" + this.props.chatSelected).remove()
-  }
-
   render() {
     return (
       <div className='container'>
@@ -117,7 +111,7 @@ class Chat extends Component {
 
           <h2>{this.props.user1}</h2>
           <h2>{this.props.user2}</h2>
-          <button onClick={this.handleDeleteChat}>x</button>
+         
         </List>
         <TextField
           autoFocus={true}

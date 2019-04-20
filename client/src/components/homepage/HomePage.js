@@ -3,9 +3,9 @@ import "./HomePage.css"
 import Search from "../Search/Search.js";
 import axios from "axios"
 import RentList from "../RentList/RentList"
-import MyVerticallyCenteredModal from "../Modal/Modal"
+// import MyVerticallyCenteredModal from "../Modal/Modal"
 import { Button, ButtonToolbar} from "react-bootstrap"
-import "../Modal/Modal.css"
+// import "../Modal/Modal.css"
 
 class HomePage extends Component {
     constructor(props) {
@@ -97,7 +97,7 @@ class HomePage extends Component {
                 <i className="fas fa-search" aria-hidden="true"></i>
         </form>
 
-        <ButtonToolbar>
+        {/* <ButtonToolbar>
      {this.state.items.map(item =>
         <MyVerticallyCenteredModal
           show={this.state.modalShow}
@@ -107,15 +107,16 @@ class HomePage extends Component {
        
 
      /> )}
-      </ButtonToolbar>
+      </ButtonToolbar> */}
             
             {this.state.items.map(item => 
                          <RentList itemName={item.itemName}
                                  itemPrice={item.itemPrice}
                                  itemLocation={item.itemLocation}
-                                //  itemDescription={item .itemDescription}
+                                 itemDescription={item .itemDescription}
                                  itemImage={item.itemImage}
                                  username={item.username}
+                                 itemId={item.id}
                                  onClick={this.expandItemHandler}/>
                          )}
                 

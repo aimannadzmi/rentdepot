@@ -1,21 +1,21 @@
 #showItems {
     float:left;
     margin-left: 5%;
+    border-radius:6px;
+    height:300px;
 }
 
 #saveItemButton {
-    position: relative;
-    left: 75%;
+    position:relative;
+    left:180%;
     margin-bottom: 7%;
-   
 }
 
 #contactItemOwnerButton {
     position: relative;
-    left: 65%;
+    left: 170%;
     margin-top: 7%;
-    
-}
+   }
 
 #itemPricePosted {
     position: relative;
@@ -25,6 +25,30 @@
 
 #itemNamePosted {
     position: relative;
-    left: 2%;
+    left:-4%;
     margin-top: 7%;
+}
+
+#itemLocation {
+    position: relative;
+    margin-top: 5%;
+    left:0%;
+}
+
+#itemDescription {
+    position:relative;
+    margin-top:3%;
+    float:left;
+   }
+
+.rentImage{
+    width: 100px;
+    height:100px;
+    overflow:hidden;
+    position: relative;
+    left:3%;
+}
+
+.rentImage img{
+    width:100%;
 }

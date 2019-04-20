@@ -37,6 +37,33 @@ router.get("/get/myprofile/:username", (req, res) => {
 
 })
 
+// save user's favorite
+router.post("/get/myprofile/:saveditem", (req, res) => {
+  console.log("user profile append item hit")
+  db.items.findAll({
+    where: {
+      id: req.params.saveditem
+    }
+  }).then(items => {
+    res.json(items);
+  });
+  console.log("item appended")
+
+
+})
+
+router.post("/delete/:itemToDelete", (req, res)=> {
+  console.log("item is being deleted")
+  db.items.destroy({
+    where: {
+      id: req.params.itemToDelete
+    }
+  }).then(() => {
+    res.json({success:true});
+  });
+  console.log("item Deleted")
+})
+
 const storage = multer.memoryStorage();
 const multerUpload = multer({ storage });
 
@@ -57,8 +84,8 @@ router.post("/add", multerUpload.single('image'), (req, res) => {
     username: username, 
     itemName: itemName,
     itemPrice: itemPrice,
-    itemLocation: itemDescription,
-    itemDescription: itemLocation,
+    itemDescription: itemDescription,
+    itemLocation: itemLocation,
     itemImage: itemImage
 
    }).then((items) => {

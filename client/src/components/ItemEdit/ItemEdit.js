@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import "./ItemEdit.css"
 
 
 export default class ItemEdit extends Component {
@@ -77,7 +78,7 @@ export default class ItemEdit extends Component {
                                     </div>
                                 </div>
                                 <input type="submit"
-                                //  onClick={()=>{ alert("Your item has been posted!"); }}
+                                 onClick={()=>{ alert("Your item has been posted!"); }}
                                   className="submitForm"
                                    id="buttoncolor" 
                                    value="Edit Item"/>

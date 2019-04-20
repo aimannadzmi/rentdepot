@@ -21,7 +21,7 @@ export default class Navbar extends Component {
                                 <ul><Link to={"/Post"}><span>Post Item</span></Link></ul> 
                                 {/* <ul><Link to={"/Inbox"}><span>Messages</span></Link></ul>  */}
                                 <ul><Link to={"/ChatPage"}><span>Chat</span></Link></ul>
-                                <ul id="navMove"><Link to={"/Profile"}><span>My Profile</span></Link></ul>
+                                <ul id="navMove"><Link to={"/Profile"}><span>My Stuff</span></Link></ul>
                             </nav>
                         </div>
                     </div>
