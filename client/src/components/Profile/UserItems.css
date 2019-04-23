@@ -1,6 +1,6 @@
 #editItemButton{
     border-radius: 5px;
-    width: 100px;
+    width: 60px;
     box-shadow: 0 1px 3px teal, 0 1px 3px teal;
     background-color: white;
     border-color: white;
@@ -12,7 +12,7 @@
 
 #deleteItemButton{
     border-radius: 5px;
-    width: 100px;
+    width: 60px;
     box-shadow: 0 1px 3px teal, 0 1px 3px teal;
     background-color: white;
     border-color: white;
