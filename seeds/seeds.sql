@@ -1,7 +1,7 @@
 
 USE itemsdb;
 	INSERT INTO `items` (itemName, itemPrice, itemDescription, itemLocation, itemImage, username, createdAt, updatedAt) 
-    VALUES ("Longboard Surfboard", "10", " Longboard for beginners!", " Laguna Beach", "Image", "Keyanna X", now(), now());
+    VALUES ("Longboard Surfboard", "10", " Longboard for beginners!", " Laguna Beach", LOAD_FILE('C:\Users\Xu\Documents\CPB\rentdepot\seeds\longboard.jpg'), "Keyanna X", now(), now());
 
     INSERT INTO `items` (itemName, itemPrice, itemDescription, itemLocation, itemImage, username, createdAt, updatedAt) 
     VALUES ("Shortboard", "5", " Shortboard for advanced surfers who want a fun time!", " Laguna Beach", "Image", "Freddy Torres", now(), now());

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import '../ChatList/ChatList.css'
 
 
 class Chatlist extends Component {
@@ -40,7 +41,7 @@ class Chatlist extends Component {
                         <Link to={"/ChatPage/" + chat.user2} >
                             {chat.user2}
                         </Link>
-                        <button onClick={() => this.handleDeleteChat(chat.user2)} >x</button>
+                        <button onClick={() => this.handleDeleteChat(chat.user2)} id="deletechatroom">x</button>
                     </li>
                 )}
             </div>

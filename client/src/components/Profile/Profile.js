@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import UserItems from "./UserItems"
 import axios from "axios"
 import ItemEdit from "../ItemEdit/ItemEdit"
+import SavedItems from "./SavedItems"
 
 export default class Profile extends Component {
     constructor(props) {
@@ -52,7 +53,7 @@ export default class Profile extends Component {
                     <div className="favoriteThings">
                     <h4>My Favorite Items</h4>
                     {this.state.items.map(item => 
-                         <UserItems itemName={item.itemName}
+                         <SavedItems itemName={item.itemName}
                                  itemPrice={item.itemPrice}
                                  itemLocation={item.itemLocation}
                                  itemDescription={item.itemDescription}
