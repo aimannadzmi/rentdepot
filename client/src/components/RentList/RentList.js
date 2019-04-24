@@ -2,10 +2,10 @@ import React from "react"
 import "./RentList.css"
 import {Button, ButtonToolbar} from "react-bootstrap"
 
-
 const RentList = (props) => {
         return (
             // onClick={props.onClick}
+            
             <div className="col-lg-5" id="showItems">
                     <div className="container"><br></br>
                         <div className="row">
@@ -52,6 +52,7 @@ const RentList = (props) => {
                         </div>
 
                     </div>
+                   
                 
         );
 }

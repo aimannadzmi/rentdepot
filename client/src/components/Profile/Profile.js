@@ -6,6 +6,7 @@ import UserItems from "./UserItems"
 import axios from "axios"
 import ItemEdit from "../ItemEdit/ItemEdit"
 import SavedItems from "./SavedItems"
+import Profle from "../Profile/Profile.js"
 
 export default class Profile extends Component {
     constructor(props) {
@@ -26,46 +27,30 @@ export default class Profile extends Component {
         ).then(response => {
             this.setState({ items: response.data });
             console.log("user's items added", response);
-          })
+        })
     }
 
     render() {
-    return (
-        <Router>
+        return (
+            <Router>
+                <div className="container col-lg-12 row profilePage">
+                    <div className="col-md-12 rentList">
 
-        {/* <ItemEdit/> */}
-            <div className="container col-lg-12 row profilePage">
-                    <div className="col-md-6 rentList">
-
-                    <h4>My Items</h4>
-                    {this.state.items.map(item => 
-                         <UserItems itemName={item.itemName}
-                                 itemPrice={item.itemPrice}
-                                 itemLocation={item.itemLocation}
-                                 itemDescription={item.itemDescription}
-                                 itemImage={item.itemImage}
-                                 itemId={item.id}/>
-                         )}
-                         </div>
-                    
-                <div className="col-md-5" id="favoritesList">
-
-                    <div className="favoriteThings">
-                    <h4>My Favorite Items</h4>
-                    {this.state.items.map(item => 
-                         <SavedItems itemName={item.itemName}
-                                 itemPrice={item.itemPrice}
-                                 itemLocation={item.itemLocation}
-                                 itemDescription={item.itemDescription}
-                                 itemImage={item.itemImage}/>
-                         )}
+                        <h4>My Items</h4>
+                        {this.state.items.map(item =>
+                            <UserItems itemName={item.itemName}
+                                itemPrice={item.itemPrice}
+                                itemLocation={item.itemLocation}
+                                itemDescription={item.itemDescription}
+                                itemImage={item.itemImage}
+                                itemId={item.id} />
+                        )}
                     </div>
-                </div>  
-                </div>        
-<Switch>
-<Route path="/ItemEdit" component={ItemEdit} />
-</Switch>
-</Router>
-    );
-}
+                </div>
+                <Switch>
+                    <Route path="/ItemEdit" component={ItemEdit} />
+                </Switch>
+            </Router>
+        );
+    }
 }

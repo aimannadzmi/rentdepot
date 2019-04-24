@@ -52,6 +52,6 @@ class UserItems extends Component {
         );
     }
 }
-//  <Link to={"/ItemEdit"}><span>Edit Item</span></Link> 
+
 
 export default UserItems;
