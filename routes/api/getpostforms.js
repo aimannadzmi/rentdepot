@@ -38,7 +38,7 @@ router.get("/get/myprofile/:username", (req, res) => {
 })
 
 // save user's favorite
-router.post("/get/myprofile/:saveditem", (req, res) => {
+router.post("/get/profile/:saveditem", (req, res) => {
   console.log("user profile append item hit")
   db.items.findAll({
     where: {
