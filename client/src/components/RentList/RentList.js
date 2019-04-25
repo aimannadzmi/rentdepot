@@ -1,65 +1,79 @@
 import React from "react"
 import "./RentList.css"
-import {Button, ButtonToolbar} from "react-bootstrap"
+import { Button, ButtonToolbar } from "react-bootstrap"
 
-const RentList = (props) => {
+
+
+class RentList extends React.Component {
+    state = {
+        saveItem: true
+
+    }
+
+    changeColor() {
+        this.setState({ saveItem: !this.state.saveItem })
+    }
+    render() {
+        let btn_class = this.state.saveItem ? "outline-info": "warning";
+        // let btn_class = this.state.saveItem ? "Save": "Saved!";
         return (
             // onClick={props.onClick}
-            
-            <div className="col-lg-5" id="showItems">
-                    <div className="container"><br></br>
-                        <div className="row">
-                       <div className="rentImage">
-                            <img src={dbImageToBase64(props.itemImage)}></img>
 
-            
-                            </div>
-                            <div className="row col-sm-4 postItemButtons">
+            <div className="col-lg-5" id="showItems">
+                <div className="container"><br></br>
+                    <div className="row">
+                        <div className="rentImage">
+                            <img src={dbImageToBase64(this.props.itemImage)}></img>
+
+
+                        </div>
+                        <div className="row col-sm-4 postItemButtons">
                             {/* <a href={"/ChatPage/" + props.username}>chat</a> */}
                             <ButtonToolbar>
-                            <Button variant="outline-info" id="saveItemButton" href={"/Profile/" + props.saveditem}>Save</Button>
-                            <br/>
-                            <Button variant="info" id= "contactItemOwnerButton" href={"/ChatPage/" + props.username}>Contact</Button>
+                                <Button variant={btn_class} onClick={this.changeColor.bind(this)} id="saveItemButton">Save</Button>
+                                <br />
+                                <Button variant="info" id="contactItemOwnerButton" href={"/ChatPage/" + this.props.username}>Contact</Button>
                             </ButtonToolbar>
                             {/* <MyVerticallyCenteredModal/> */}
-                            </div>
-
-                        </div>
-                        <div className="col-lg-12 row" id="rentDetails">
-                        
-                            <div className="col-sm-6" id="itemNamePosted">
-                                {props.itemName}
-                            </div>
-                            <div className="col-sm-6" id="itemPricePosted">$ {props.itemPrice} per day
-                            </div>
-                            
-                            <div className="row">
-                            <div className="col-lg-12" id="itemLocation"> Location: 
-                                {props.itemLocation}
-                            </div>
-                            <br/>
-                            </div>
-                            <div className="row" id="itemDescription"> 
-                            <div className="col-lg-12"> Description: 
-                                {props.itemDescription}
-
-                            </div>
-                            </div>
-
-                        </div>
-                       
-                        
                         </div>
 
                     </div>
-                   
-                
+                    <div className="col-lg-12 row" id="rentDetails">
+
+                        <div className="col-sm-6" id="itemNamePosted">
+                            {this.props.itemName}
+                        </div>
+                        <div className="col-sm-6" id="itemPricePosted">$ {this.props.itemPrice} per day
+                            </div>
+
+                        <div className="row">
+                            <div className="col-lg-12" id="itemLocation"> Location:
+                                {this.props.itemLocation}
+                            </div>
+                            <br />
+                        </div>
+                        <div className="row" id="itemDescription">
+                            <div className="col-lg-12"> Description:
+                                {this.props.itemDescription}
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
         );
+    }
 }
 
 // Converts image pulled from the database to base64 data the img tag can use
 function dbImageToBase64(itemImage) {
-    if (!itemImage || !itemImage.data) 
+    if (!itemImage || !itemImage.data)
         return;
 
     var binary = '';
