@@ -84,7 +84,8 @@ export default class ItemEdit extends Component {
                                             className="submitForm buttonMatch"
                                             // id="buttoncolor"
                                             value="Edit Item">Edit Item</button>
-                                        <button className="cancelEdit buttonMatch">Cancel
+                                        <button className="cancelEdit buttonMatch"
+                                        ><Link to={"/Profile"}><span>Cancel</span></Link>
                                         </button>
                                  
                                     </div>
