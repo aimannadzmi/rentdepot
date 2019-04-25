@@ -19,7 +19,6 @@ export default class ItemEdit extends Component {
 
     render() {
         return (
-        
                 <div className="container" id="postForm">
                     <div className="row">
                         <div className="col-lg-12">
@@ -79,13 +78,15 @@ export default class ItemEdit extends Component {
                                             // value={this.state.itemImage}
                                             />
                                         </div>
-                                        <input type="submit"
+                                        
+                                        <button
                                             onClick={() => { alert("Your item has been posted!"); }}
-                                            className="submitForm"
-                                            id="buttoncolor"
-                                            value="Edit Item" />
-                                        <button type="submit" className="cancelEdit" id="cancelEdit">
+                                            className="submitForm buttonMatch"
+                                            // id="buttoncolor"
+                                            value="Edit Item">Edit Item</button>
+                                        <button className="cancelEdit buttonMatch">Cancel
                                         </button>
+                                 
                                     </div>
                                 </form>
                             </div>

@@ -2,16 +2,13 @@
     border-color:white;
 }
 
-#cancelEdit{
-    margin-top: 5%;
-    background: #fff;
-    border-radius: 6px;
-    overflow: hidden;
-    padding: 12px, 20px;
-    box-shadow: 0 3px 6px teal, 0 3px 6px teal;
-    border-color: white;
-    border-style: solid;
-    margin-left: 2%;
-    height: 24px;
+.buttonMatch{
+    border-radius: 5px;
     width: 60px;
+    box-shadow: 0 1px 3px teal, 0 1px 3px teal;
+    background-color: white;
+    border-color: white;
+    font-family: 'Patua One', cursive;
+    color: teal;
+    margin: 5px;
 }
