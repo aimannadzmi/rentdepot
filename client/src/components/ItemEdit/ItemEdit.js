@@ -3,21 +3,41 @@ import "./ItemEdit.css"
 import { Button, ButtonToolbar } from "react-bootstrap"
 import Profile from "../Profile/Profile.js"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import axios from "axios";
+import  {withRouter} from 'react-router-dom';
 
-export default class ItemEdit extends Component {
+class ItemEdit extends Component {
     state = {
-        initialItemName: "",
-        initialItemLocation: "",
-        initialItemDescription: "",
-        initialItemImage: "",
-        newItemName: "",
-        newItemLocation: "",
-        newItemDescription: "",
-        newItemImage: ""
+    itemName: "",
+    itemPrice: "",
+    itemLocation: "",
+    itemDescription:"",
+    itemImage:"",
+    }
 
+    handleEditSubmit =(e) => {
+        e.preventDefault();
+        console.log(this.state.initialItemName);
+    }
+
+    componentDidMount =() => {
+        this.getItemDetails();
+    }
+
+    getItemDetails =() => {
+        axios.get("/api/getpostforms/get/editItem/" + this.props.match.params.itemId).then(response => {
+            let item = response.data[0];
+            this.setState({ item });
+            this.setState({itemName: item.itemName});
+            this.setState({itemPrice: item.itemPrice});
+            this.setState({itemLocation: item.itemLocation});
+            this.setState({itemDescription: item.itemName});
+            console.log("posted item", response.data);
+        })
     }
 
     render() {
+        console.log(this.props.match.params.itemId);
         return (
                 <div className="container" id="postForm">
                     <div className="row">
@@ -65,9 +85,9 @@ export default class ItemEdit extends Component {
                                             onChange={this.handleInputChange}
                                             value={this.state.itemDescription} />
                                     </div>
-
-                                    <div>
-                                        <div className="form-group">
+                                    <br/>
+                                    <div className="spacey">
+                                        {/* <div className="form-group">
                                             <div id="uploaditemText">Change Image</div>
                                             <input type="file"
                                                 className="form-control-file"
@@ -77,12 +97,11 @@ export default class ItemEdit extends Component {
                                                 ref={this.fileInput}
                                             // value={this.state.itemImage}
                                             />
-                                        </div>
+                                        </div> */}
                                         
                                         <button
                                             onClick={() => { alert("Your item has been posted!"); }}
                                             className="submitForm buttonMatch"
-                                            // id="buttoncolor"
                                             value="Edit Item">Edit Item</button>
                                         <button className="cancelEdit buttonMatch"
                                         ><Link to={"/Profile"}><span>Cancel</span></Link>
@@ -98,3 +117,5 @@ export default class ItemEdit extends Component {
         )
     }
 }
+
+export default withRouter(ItemEdit);

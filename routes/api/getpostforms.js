@@ -21,6 +21,18 @@ router.get("/get/search/:itemName", (req, res) => {
   });
 })
 
+// edit item
+router.get("/get/editItem/:itemId", (req, res) => {
+  console.log("searching")
+  db.items.findAll({
+    where: {
+      id: req.params.itemId
+    }
+  }).then(items => {
+    res.json(items);
+  });
+})
+
 
 // get user's listings
 router.get("/get/myprofile/:username", (req, res) => {
@@ -33,8 +45,6 @@ router.get("/get/myprofile/:username", (req, res) => {
     res.json(items);
   });
   console.log("item appended")
-
-
 })
 
 // save user's favorite
@@ -48,8 +58,6 @@ router.post("/get/profile/:saveditem", (req, res) => {
     res.json(items);
   });
   console.log("item appended")
-
-
 })
 
 router.post("/delete/:itemToDelete", (req, res)=> {

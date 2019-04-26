@@ -37,8 +37,8 @@ class UserItems extends Component {
                             {this.props.itemName}
                             </div>
                             <div className="buttonss">
-                            <button type="submit" id="editItemButton"> 
-                            <Link to={"/ItemEdit"}><span>Edit</span></Link> 
+                            <button type="submit" className="editItemButton" id={this.props.itemId}> 
+                            <Link to={"/ItemEdit/" + this.props.itemId}><span>Edit</span></Link> 
                             </button>
                             <button onClick={this.handleClick} type="submit" id="deleteItemButton">Delete</button>
                             </div>
@@ -46,7 +46,7 @@ class UserItems extends Component {
                     </div>
                 </div>
                 <Switch>
-                    <Route path="/ItemEdit" component={ItemEdit} />
+                    <Route path="/ItemEdit/:itemId" component={ItemEdit} />
                 </Switch>
             </Router>
         );
