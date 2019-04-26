@@ -73,7 +73,7 @@ export default class ItemEdit extends Component {
                                                 className="form-control-file"
                                                 id="imageUploadInput"
                                                 name="itemImage"
-                                                method="post" enctype="multipart/form-data"
+                                                method="post" encType="multipart/form-data"
                                                 ref={this.fileInput}
                                             // value={this.state.itemImage}
                                             />

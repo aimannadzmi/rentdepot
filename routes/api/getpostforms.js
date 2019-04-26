@@ -4,7 +4,7 @@ const multer = require('multer');
 
 // get all listings
 router.get("/", (req, res) => {
-  db.items.findAll().then(items => {
+  db.items.findAll({order:[["createdAt", "DESC"]]}).then(items => {
     res.json(items);
   });
 })

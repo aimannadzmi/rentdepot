@@ -14,7 +14,7 @@ class RentList extends React.Component {
         this.setState({ saveItem: !this.state.saveItem })
     }
     render() {
-        let btn_class = this.state.saveItem ? "outline-info": "warning";
+        let btn_class = this.state.saveItem ? "outline-info" : "warning";
         // let btn_class = this.state.saveItem ? "Save": "Saved!";
         return (
             // onClick={props.onClick}
@@ -24,49 +24,31 @@ class RentList extends React.Component {
                     <div className="row">
                         <div className="rentImage">
                             <img src={dbImageToBase64(this.props.itemImage)}></img>
-
-
                         </div>
                         <div className="row col-sm-4 postItemButtons">
-                            {/* <a href={"/ChatPage/" + props.username}>chat</a> */}
                             <ButtonToolbar>
                                 <Button variant={btn_class} onClick={this.changeColor.bind(this)} id="saveItemButton">Save</Button>
                                 <br />
                                 <Button variant="info" id="contactItemOwnerButton" href={"/ChatPage/" + this.props.username}>Contact</Button>
                             </ButtonToolbar>
-                            {/* <MyVerticallyCenteredModal/> */}
                         </div>
-
                     </div>
                     <div className="col-lg-12 row" id="rentDetails">
-
                         <div className="col-sm-6" id="itemNamePosted">
                             {this.props.itemName}
                         </div>
                         <div className="col-sm-6" id="itemPricePosted">$ {this.props.itemPrice} per day
-                            </div>
-
+                        </div>
                         <div className="row">
-                            <div className="col-lg-12" id="itemLocation"> Location:
-                                {this.props.itemLocation}
+                            <div className="col-lg-12" id="itemLocation"> Location: {this.props.itemLocation}
                             </div>
-                            <br />
                         </div>
                         <div className="row" id="itemDescription">
-                            <div className="col-lg-12"> Description:
-                                {this.props.itemDescription}
-
-                            </div>
+                            <div className="col-lg-12"> Description: {this.props.itemDescription}</div>
                         </div>
-
                     </div>
-
-
                 </div>
-
             </div>
-
-
         );
     }
 }
