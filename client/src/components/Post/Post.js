@@ -37,7 +37,6 @@ export default class Form extends Component {
         })
     }
     handleFormSubmit = (e) => {
-        e.preventDefault();
         const data = this.state
         console.log(data);
 
@@ -65,8 +64,6 @@ export default class Form extends Component {
     }
     
     formValidation = (e) => {
-        console.log("form validation is running");
-        console.log(this.state.itemImage);
         if(this.state.itemName === "" || this.state.itemPrice === "" || 
         this.state.itemLocation === "" || this.state.itemDescription === "" ||
         this.state.itemImage === null){
