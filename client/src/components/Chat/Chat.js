@@ -105,13 +105,12 @@ class Chat extends Component {
       <div className='container'>
 
         <List>
+          <h2>{this.props.user1}</h2>
+          <h2>{this.props.user2}</h2>
+
           {this.state.messages.length > 1 &&
             this.renderMessages()
           }
-
-          <h2>{this.props.user1}</h2>
-          <h2>{this.props.user2}</h2>
-         
         </List>
         <TextField
           autoFocus={true}
