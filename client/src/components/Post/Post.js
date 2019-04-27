@@ -1,10 +1,11 @@
-import React, { Component } from "react"
-import "./Post.css"
-import axios from "axios"
-import firebase from "firebase"
-import $ from "jquery"
-import ItemEdit from "../ItemEdit/ItemEdit"
-
+import React, { Component } from "react";
+import "./Post.css";
+import axios from "axios";
+import firebase from "firebase";
+import $ from "jquery";
+import ItemEdit from "../ItemEdit/ItemEdit";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Redirect } from "react-router";
 
 export default class Form extends Component {
     fileInput = React.createRef();
@@ -18,7 +19,8 @@ export default class Form extends Component {
             itemPrice: '',
             itemDescription: '',
             itemLocation: '',
-            itemImage: ''
+            itemImage: '',
+            redirect: false
         }
     };
     selectedFileHandler = (e) => {
@@ -54,7 +56,10 @@ export default class Form extends Component {
         
         axios.post("/api/getpostforms/add", formData).then(response => {
             console.log("Item added", response);
-            alert("your item has been posted!")
+            alert("your item has been posted!");
+            this.setState({ redirect: true });
+
+
             // Tell our parent component that we've updated the database
             if (this.props.afterAddCallback) {
               this.props.afterAddCallback();
@@ -76,6 +81,8 @@ export default class Form extends Component {
     }
 
     render() {
+        const { redirect } = this.state;
+        if(redirect) { return <Redirect to ="/homepage">;</Redirect>}
         return (
             <div className="container" id="postForm">
                 <div className="row">
