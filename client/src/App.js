@@ -70,7 +70,7 @@ class App extends Component {
           </span>
         ) : (
           
-          <div className="colorfulSignIn container"> 
+          <div className="container colorfulSignIn"> 
           <img id="frontPageLogo" src={Logo}/>
           <div className="centerLogin">
           
